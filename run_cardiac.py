@@ -30,7 +30,7 @@ with open('./cardiac_estim.txt', 'w') as fpr:
     for training_cond in training_conds:
         predpath = f"{training_cond}/cardiacval/results"
         gtpath = f"{datapath}/1"
-        fpr.write(cmd_estim.format(dataset=dataset, predpath=predpath, gtpath=gtpath))
+        fpr.write(cmd_estim.format(dataset=dataset, predpath=f'"{predpath}"', gtpath=f'"{gtpath}"'))
 
 print(f'fsl_sub -q short -R 128 -l logs -t ./cardiac_estim.txt')
 
@@ -43,13 +43,13 @@ with open('./cardiac_eval.txt', 'w') as fpr:
             predpath = f"{training_cond}/cardiactestsyn_{test_syn_cond}/results"
             gtpath = f"{datapath}/1"
             savingpath = f"./results_{dataset}_syn_{test_syn_cond}.txt"
-            fpr.write(cmd_eval.format(predpath=predpath, gtpath=gtpath, savingpath=savingpath))
+            fpr.write(cmd_eval.format(predpath=f'"{predpath}"', gtpath=f'"{gtpath}"', savingpath=f'"{savingpath}"'))
         
         for test_nat_cond in test_nat_conds:
 
             predpath = f"{training_cond}/cardiactest_{test_nat_cond}/results"
             gtpath = f"{datapath}/{test_nat_cond}"
             savingpath = f"./results_{dataset}_nat_{test_nat_cond}.txt"
-            fpr.write(cmd_eval.format(predpath=predpath, gtpath=gtpath, savingpath=savingpath))
+            fpr.write(cmd_eval.format(predpath=f'"{predpath}"', gtpath=f'"{gtpath}"', savingpath=f'"{savingpath}"'))
 
 print(f'fsl_sub -q short -R 128 -l logs -t ./cardiac_eval.txt')
