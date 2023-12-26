@@ -34,7 +34,7 @@ def main():
     for predfile in predfiles:
         if predfile.split('_')[-2][-1] == '0':
             # grep the caseID
-            caseID = f"{predfile.split('_')[-3]}_{predfile.split('_')[-2][:-4]}"
+            caseID = f"{predfile.split('_')[-2][:-4]}"
             #
             GT_file = f"{args.gtpath}/{caseID}/seg.nii.gz"
             #
