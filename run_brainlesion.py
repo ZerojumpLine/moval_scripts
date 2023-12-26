@@ -5,8 +5,8 @@
 import os
 
 bin = '/well/win-fmrib-analysis/users/gqu790/conda/skylake/envs/moval/bin/python'
-cmd_estim = bin + ' /well/win-fmrib-analysis/users/gqu790/moval/moval_scripts/estim_seg3d.py --dataset {dataset} --predpath {predpath} --gtpath {gtpath}'
-cmd_eval = bin + ' /well/win-fmrib-analysis/users/gqu790/moval/moval_scripts/eval_seg3d_brainlesion.py --predpath {predpath} --gtpath {gtpath} --savingpath {savingpath}'
+cmd_estim = bin + ' /well/win-fmrib-analysis/users/gqu790/moval/moval_scripts/estim_seg3d.py --dataset {dataset} --predpath {predpath} --gtpath {gtpath} \n'
+cmd_eval = bin + ' /well/win-fmrib-analysis/users/gqu790/moval/moval_scripts/eval_seg3d_brainlesion.py --predpath {predpath} --gtpath {gtpath} --savingpath {savingpath} \n'
 
 ## baseline training
 
@@ -50,6 +50,8 @@ with open('./brainlesion_estim.txt', 'w') as fpr:
         gtpath = f"{datapath}/Siemens Trio"
         fpr.write(cmd_estim.format(dataset=dataset, predpath=predpath, gtpath=gtpath))
 
+print(f'fsl_sub -q short -R 128 -l logs -t ./brainlesion_estim.txt')
+
 # evaluate 36 condtions for all test conditions
 with open('./brainlesion_eval.txt', 'w') as fpr:
     for training_cond in training_conds:
@@ -73,3 +75,5 @@ with open('./brainlesion_eval.txt', 'w') as fpr:
             gtpath = f"{datapath}/{test_nat_cond}"
             savingpath = f"./results_{dataset}_nat_{test_nat_cond}.txt"
             fpr.write(cmd_eval.format(predpath=predpath, gtpath=gtpath, savingpath=savingpath))
+
+print(f'fsl_sub -q short -R 128 -l logs -t ./brainlesion_eval.txt')
