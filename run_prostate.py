@@ -6,7 +6,7 @@ import os
 
 bin = '/well/win-fmrib-analysis/users/gqu790/conda/skylake/envs/moval/bin/python'
 cmd_estim = bin + ' /well/win-fmrib-analysis/users/gqu790/moval/moval_scripts/estim_seg3d.py --dataset {dataset} --predpath {predpath} --gtpath {gtpath} \n'
-cmd_eval = bin + ' /well/win-fmrib-analysis/users/gqu790/moval/moval_scripts/eval_seg3d_prostate.py --predpath {predpath} --gtpath {gtpath} --savingpath {savingpath} \n'
+cmd_eval = bin + ' /well/win-fmrib-analysis/users/gqu790/moval/moval_scripts/eval_seg3d_prostate.py --dataset {dataset} --predpath {predpath} --gtpath {gtpath} --savingpath {savingpath} \n'
 
 ## baseline training
 
@@ -44,13 +44,13 @@ with open('./prostate_eval.txt', 'w') as fpr:
             predpath = f"{training_cond}/prostatetestsyn_{test_syn_cond}/results"
             gtpath = f"{datapath}/BMC"
             savingpath = f"./results_{dataset}_syn_{test_syn_cond}.txt"
-            fpr.write(cmd_eval.format(predpath=f'"{predpath}"', gtpath=f'"{gtpath}"', savingpath=f'"{savingpath}"'))
+            fpr.write(cmd_eval.format(dataset=dataset, predpath=f'"{predpath}"', gtpath=f'"{gtpath}"', savingpath=f'"{savingpath}"'))
         
         for test_nat_cond in test_nat_conds:
 
             predpath = f"{training_cond}/prostatetest_{test_nat_cond}/results"
             gtpath = f"{datapath}/{test_nat_cond}"
             savingpath = f"./results_{dataset}_nat_{test_nat_cond}.txt"
-            fpr.write(cmd_eval.format(predpath=f'"{predpath}"', gtpath=f'"{gtpath}"', savingpath=f'"{savingpath}"'))
+            fpr.write(cmd_eval.format(dataset=dataset, predpath=f'"{predpath}"', gtpath=f'"{gtpath}"', savingpath=f'"{savingpath}"'))
 
 print(f'fsl_sub -q short -R 128 -l logs -t ./prostate_eval.txt')

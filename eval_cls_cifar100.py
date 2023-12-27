@@ -124,10 +124,7 @@ def main():
             gt_tests = gt_tests
         )
 
-        test_condition = f"estim_algorithm = {moval_options[k_cond][0]}, 
-                            mode = {moval_options[k_cond][1]}, 
-                            confidence_scores = {moval_options[k_cond][2]}, 
-                            class_specific = {moval_options[k_cond][3]}"
+        test_condition = f"estim_algorithm = {moval_options[k_cond][0]}, mode = {moval_options[k_cond][1]}, confidence_scores = {moval_options[k_cond][2]}, class_specific = {moval_options[k_cond][3]}"
 
         with open(results_files, 'a') as f:
             f.write(test_condition)

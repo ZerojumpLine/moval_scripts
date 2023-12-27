@@ -17,7 +17,7 @@ import numpy as np
 
 
 parser = argparse.ArgumentParser(description='Estimating MOVAL Parameters for 3d segmentation Performance Evaluation')
-parser.add_argument('--dataset', default='', type=str, help='saving checkpoint name, Cardiac | Prostate | Brainlesion | Brainlesionci1 | Brainlesionci2 | Brainlesionrl1 | Brainlesionrl2')
+parser.add_argument('--dataset', default='', type=str, help='saving checkpoint name, Cardiac | Prostate | Brainlesionlas | Brainlesionci1 | Brainlesionci2 | Brainlesionrl1 | Brainlesionrl2')
 parser.add_argument('--predpath', default='/well/win-fmrib-analysis/users/gqu790/moval/Robust-Medical-Segmentation/output/prostate/prostateval/results', type=str, help='pred path of the validation cases')
 parser.add_argument('--gtpath', default='/well/win-fmrib-analysis/users/gqu790/moval/Robust-Medical-Segmentation/data/Dataset_Prostate/BMC', type=str, help='gt path of the validation cases')
 

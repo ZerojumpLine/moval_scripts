@@ -17,7 +17,7 @@ import numpy as np
 from moval.solvers.utils import ComputMetric
 
 parser = argparse.ArgumentParser(description='Brainlesion 3D Segmentation Performance Evaluation')
-parser.add_argument('--dataset', default='', type=str, help='saving checkpoint name, Brainlesion | Brainlesionci1 | Brainlesionci2 | Brainlesionrl1 | Brainlesionrl2')
+parser.add_argument('--dataset', default='', type=str, help='saving checkpoint name, Brainlesionlas | Brainlesionci1 | Brainlesionci2 | Brainlesionrl1 | Brainlesionrl2')
 parser.add_argument('--predpath', default='/well/win-fmrib-analysis/users/gqu790/moval/Robust-Medical-Segmentation/output/atlas/atlasval/results', type=str, help='pred path of the test cases')
 parser.add_argument('--gtpath', default='/well/win-fmrib-analysis/users/gqu790/moval/Robust-Medical-Segmentation/data/Dataset_Brain_lesion/Siemens Trio', type=str, help='gt path of the test cases')
 parser.add_argument('--savingpath', default='./results_brainlesion_syn.txt', type=str, help='txt file to save the evaluation results')
@@ -130,10 +130,7 @@ def main():
             dataset = args.dataset
         )
 
-        test_condition = f"estim_algorithm = {moval_options[k_cond][0]}, 
-                            mode = {moval_options[k_cond][1]}, 
-                            confidence_scores = {moval_options[k_cond][2]}, 
-                            class_specific = {moval_options[k_cond][3]}"
+        test_condition = f"estim_algorithm = {moval_options[k_cond][0]}, mode = {moval_options[k_cond][1]}, confidence_scores = {moval_options[k_cond][2]}, class_specific = {moval_options[k_cond][3]}"
 
         with open(results_files, 'a') as f:
             f.write(test_condition)
