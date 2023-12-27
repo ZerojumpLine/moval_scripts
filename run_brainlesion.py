@@ -57,10 +57,7 @@ with open('./brainlesion_eval.txt', 'w') as fpr:
     for training_cond in training_conds:
 
         ext = training_cond.split('/')[-1][-3:]
-        if ext == 'atlas':
-            dataset = 'Brainlesion'
-        else:
-            dataset = f"Brainlesion{ext}"
+        dataset = f"Brainlesion{ext}"
 
         for test_syn_cond in test_syn_conds:
 
