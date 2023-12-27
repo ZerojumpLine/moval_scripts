@@ -6,7 +6,7 @@ import os
 
 bin = '/well/win-fmrib-analysis/users/gqu790/conda/skylake/envs/moval/bin/python'
 cmd_estim = bin + ' /well/win-fmrib-analysis/users/gqu790/moval/moval_scripts/estim_cls.py --dataset {dataset} --numcls {numcls} --valpath {valpath} \n'
-cmd_eval = bin + ' /well/win-fmrib-analysis/users/gqu790/moval/moval_scripts/eval_cls_cifar100.py --testpath {testpath} --savingpath {savingpath} \n'
+cmd_eval = bin + ' /well/win-fmrib-analysis/users/gqu790/moval/moval_scripts/eval_cls_cifar100.py --dataset {dataset} --testpath {testpath} --savingpath {savingpath} \n'
 
 ## baseline training
 
@@ -43,6 +43,6 @@ with open('./cifar100_eval.txt', 'w') as fpr:
 
             testpath = f"{training_cond}/predictions_val_{test_syn_cond}.csv"
             savingpath = f"./results_{dataset}_{test_syn_cond}.txt"
-            fpr.write(cmd_eval.format(testpath=f'"{testpath}"', savingpath=f'"{savingpath}"'))
+            fpr.write(cmd_eval.format(dataset=dataset, testpath=f'"{testpath}"', savingpath=f'"{savingpath}"'))
 
 print(f'fsl_sub -q short -R 128 -l logs -t ./cifar100_eval.txt')
