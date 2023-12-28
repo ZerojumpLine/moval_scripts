@@ -17,13 +17,14 @@ import numpy as np
 from moval.solvers.utils import ComputMetric
 
 parser = argparse.ArgumentParser(description='Cardiac 2D Segmentation Performance Evaluation')
+parser.add_argument('--dataset', default='', type=str, help='saving checkpoint name, Cardiac')
 parser.add_argument('--predpath', default='/well/win-fmrib-analysis/users/gqu790/moval/Robust-Medical-Segmentation/output/cardiac/cardiacval/results', type=str, help='pred path of the test cases')
 parser.add_argument('--gtpath', default='/well/win-fmrib-analysis/users/gqu790/moval/Robust-Medical-Segmentation/data/Dataset_Cardiac/1', type=str, help='gt path of the test cases')
 parser.add_argument('--savingpath', default='./results_cardiac_syn.txt', type=str, help='txt file to save the evaluation results')
 
 args = parser.parse_args()
 
-def test_cls(estim_algorithm, mode, confidence_scores, class_specific, logits_test, gt_test):
+def test_cls(estim_algorithm, mode, confidence_scores, class_specific, logits_test, gt_test, dataset):
     """Test MOVAL with different conditions for 2d segmentation tasks
 
     Args:
@@ -46,7 +47,7 @@ def test_cls(estim_algorithm, mode, confidence_scores, class_specific, logits_te
 
     """
 
-    ckpt_savname = f"./Cardiac_{mode}2d_{confidence_scores}_{estim_algorithm}_{class_specific}.pkl"
+    ckpt_savname = f"./{dataset}_{mode}2d_{confidence_scores}_{estim_algorithm}_{class_specific}.pkl"
 
     moval_model = moval.MOVAL.load(ckpt_savname)
 
@@ -154,7 +155,8 @@ def main():
             confidence_scores = moval_options[k_cond][2],
             class_specific = moval_options[k_cond][3],
             logits_tests = logits,
-            gt_tests = gt
+            gt_tests = gt,
+            dataset = args.dataset
         )
 
         test_condition = f"estim_algorithm = {moval_options[k_cond][0]}, mode = {moval_options[k_cond][1]}, confidence_scores = {moval_options[k_cond][2]}, class_specific = {moval_options[k_cond][3]}"

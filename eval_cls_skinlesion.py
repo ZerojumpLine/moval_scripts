@@ -15,12 +15,13 @@ import numpy as np
 
 
 parser = argparse.ArgumentParser(description='HAM10000 Performance Evaluation')
+parser.add_argument('--dataset', default='', type=str, help='saving checkpoint name, HAM')
 parser.add_argument('--testpath', default='', type=str, help='csv path of the test prediction conditions')
 parser.add_argument('--savingpath', default='./results_HAM_syn.txt', type=str, help='txt file to save the evaluation results')
 
 args = parser.parse_args()
 
-def test_cls(estim_algorithm, mode, confidence_scores, class_specific, logits_tests, gt_tests):
+def test_cls(estim_algorithm, mode, confidence_scores, class_specific, logits_tests, gt_tests, dataset):
     """Test MOVAL with different conditions for classification tasks
 
     Args:
@@ -43,7 +44,7 @@ def test_cls(estim_algorithm, mode, confidence_scores, class_specific, logits_te
 
     """
 
-    ckpt_savname = f"./HAM_{mode}_{confidence_scores}_{estim_algorithm}_{class_specific}.pkl"
+    ckpt_savname = f"./{dataset}_{mode}_{confidence_scores}_{estim_algorithm}_{class_specific}.pkl"
 
     moval_model = moval.MOVAL.load(ckpt_savname)
 
@@ -110,7 +111,8 @@ def main():
             confidence_scores = moval_options[k_cond][2],
             class_specific = moval_options[k_cond][3],
             logits_tests = logits_tests,
-            gt_tests = gt_tests
+            gt_tests = gt_tests,
+            dataset = args.dataset
         )
 
         test_condition = f"estim_algorithm = {moval_options[k_cond][0]}, mode = {moval_options[k_cond][1]}, confidence_scores = {moval_options[k_cond][2]}, class_specific = {moval_options[k_cond][3]}"
