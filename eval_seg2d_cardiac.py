@@ -154,8 +154,8 @@ def main():
             mode = moval_options[k_cond][1],
             confidence_scores = moval_options[k_cond][2],
             class_specific = moval_options[k_cond][3],
-            logits_tests = logits,
-            gt_tests = gt,
+            logits_test = logits,
+            gt_test = gt,
             dataset = args.dataset
         )
 

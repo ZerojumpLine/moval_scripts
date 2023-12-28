@@ -79,7 +79,7 @@ def main():
     for predfile in predfiles:
         if predfile.split('_')[-2][-1] == '0':
             # grep the caseID
-            caseID = f"{predfile.split('_')[-3]}_{predfile.split('_')[-2][:-4]}"
+            caseID = f"{predfile.split('_')[-2][:-4]}"
             #
             GT_file = f"{args.gtpath}/{caseID}/seg.nii.gz"
             #
@@ -125,8 +125,8 @@ def main():
             mode = moval_options[k_cond][1],
             confidence_scores = moval_options[k_cond][2],
             class_specific = moval_options[k_cond][3],
-            logits_tests = logits,
-            gt_tests = gt,
+            logits_test = logits,
+            gt_test = gt,
             dataset = args.dataset
         )
 
