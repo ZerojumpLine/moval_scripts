@@ -15,58 +15,16 @@ import moval
 import nibabel as nib
 import numpy as np
 from moval.solvers.utils import ComputMetric
+from eval_seg3d_brainlesion import test_cls
 
 parser = argparse.ArgumentParser(description='Prostate 3D Segmentation Performance Evaluation')
 parser.add_argument('--dataset', default='', type=str, help='saving checkpoint name, Prostate')
 parser.add_argument('--predpath', default='/well/win-fmrib-analysis/users/gqu790/moval/Robust-Medical-Segmentation/output/prostate/prostateval/results', type=str, help='pred path of the test cases')
 parser.add_argument('--gtpath', default='/well/win-fmrib-analysis/users/gqu790/moval/Robust-Medical-Segmentation/data/Dataset_Prostate/BMC', type=str, help='gt path of the test cases')
+parser.add_argument('--metric', default='accuracy', type=str, help='type of estimation metrics, accuracy | sensitivity | precision | f1score | auc')
 parser.add_argument('--savingpath', default='./results_prostate_syn.txt', type=str, help='txt file to save the evaluation results')
 
 args = parser.parse_args()
-
-def test_cls(estim_algorithm, mode, confidence_scores, class_specific, logits_test, gt_test, dataset):
-    """Test MOVAL with different conditions for 3d segmentation tasks
-
-    Args:
-        mode (str): The given task to estimate model performance.
-        confidence_scores (str):
-            The method to calculate the confidence scores. We provide a list of confidence score calculation methods which
-            can be displayed by running :py:func:`moval.models.get_conf_options`.
-        estim_algorithm (str):
-            The algorithm to estimate model performance. We also provide a list of estimation algorithm which can be displayed by
-            running :py:func:`moval.models.get_estim_options`.
-        class_specific (bool):
-            If ``True``, the calculation will match class-wise confidence to class-wise accuracy.
-        logits_test:  The network testing output (logits) of a list of n' ``(d, H', W', (D'))`` for segmentation.
-        gt_test: The cooresponding testing annotation of a list of n' ``(H', W', (D'))`` for segmentation.
-
-    Returns:
-        err_test (float): testing error.
-        dsc_estims: the estimated dsc of D'-1 classes.
-        dsc_reals: the real dsc of D'-1 classes.
-
-    """
-
-    ckpt_savname = f"./{dataset}_{mode}3d_{confidence_scores}_{estim_algorithm}_{class_specific}.pkl"
-
-    moval_model = moval.MOVAL.load(ckpt_savname)
-
-    # save the test err in the result files.
-
-    estim_dsc_test = moval_model.estimate(logits_test)
-
-    DSC_list_test = []
-    for n_case in range(len(logits_test)):
-        pred_case   = np.argmax(logits_test[n_case], axis = 0) # ``(H', W', (D'))``
-        gt_case     = gt_test[n_case] # ``(H', W', (D'))``
-
-        DSC = ComputMetric(pred_case == 1, gt_case == 1)
-        DSC_list_test.append(DSC)
-    m_DSC_test = np.mean(np.array(DSC_list_test))
-
-    err_test = np.abs( m_DSC_test - estim_dsc_test )
-
-    return err_test, estim_dsc_test, m_DSC_test
 
 def main():
 
@@ -120,9 +78,10 @@ def main():
 
     for k_cond in range(len(moval_options)):
 
-        err_test, dsc_estim, dsc_real = test_cls(
+        err_test, metric_estim, metric_real = test_cls(
             estim_algorithm = moval_options[k_cond][0],
             mode = moval_options[k_cond][1],
+            metric = args.metric,
             confidence_scores = moval_options[k_cond][2],
             class_specific = moval_options[k_cond][3],
             logits_test = logits,
@@ -130,7 +89,7 @@ def main():
             dataset = args.dataset
         )
 
-        test_condition = f"estim_algorithm = {moval_options[k_cond][0]}, mode = {moval_options[k_cond][1]}, confidence_scores = {moval_options[k_cond][2]}, class_specific = {moval_options[k_cond][3]}"
+        test_condition = f"estim_algorithm = {moval_options[k_cond][0]}, mode = {moval_options[k_cond][1]}, metric = {args.metric}, confidence_scores = {moval_options[k_cond][2]}, class_specific = {moval_options[k_cond][3]}"
 
         with open(results_files, 'a') as f:
             f.write(test_condition)
@@ -138,11 +97,11 @@ def main():
             f.write("test err: ")
             f.write(str(err_test))
             f.write('\n')
-            f.write("estimated dsc: ")
-            f.write(str(dsc_estim))
+            f.write("estimated metric: ")
+            f.write(str(metric_estim))
             f.write('\n')
-            f.write("real dsc: ")
-            f.write(str(dsc_real))
+            f.write("real metric: ")
+            f.write(str(metric_real))
             f.write('\n')
             f.write('\n')
 

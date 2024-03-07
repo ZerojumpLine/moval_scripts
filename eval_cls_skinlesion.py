@@ -12,61 +12,15 @@ import itertools
 import moval
 import pandas as pd
 import numpy as np
-
+from eval_cls_cifar10 import test_cls
 
 parser = argparse.ArgumentParser(description='HAM10000 Performance Evaluation')
 parser.add_argument('--dataset', default='', type=str, help='saving checkpoint name, HAM')
 parser.add_argument('--testpath', default='', type=str, help='csv path of the test prediction conditions')
+parser.add_argument('--metric', default='accuracy', type=str, help='type of estimation metrics, accuracy | sensitivity | precision | f1score | auc')
 parser.add_argument('--savingpath', default='./results_HAM_syn.txt', type=str, help='txt file to save the evaluation results')
 
 args = parser.parse_args()
-
-def test_cls(estim_algorithm, mode, confidence_scores, class_specific, logits_tests, gt_tests, dataset):
-    """Test MOVAL with different conditions for classification tasks
-
-    Args:
-        mode (str): The given task to estimate model performance.
-        confidence_scores (str):
-            The method to calculate the confidence scores. We provide a list of confidence score calculation methods which
-            can be displayed by running :py:func:`moval.models.get_conf_options`.
-        estim_algorithm (str):
-            The algorithm to estimate model performance. We also provide a list of estimation algorithm which can be displayed by
-            running :py:func:`moval.models.get_estim_options`.
-        class_specific (bool):
-            If ``True``, the calculation will match class-wise confidence to class-wise accuracy.
-        logits_tests:  A list of m test conditions ``(n', d)``.
-        gt_test: The cooresponding annotation of a list of m ``(n', )``.
-
-    Returns:
-        err_test: A list of m test err.
-        acc_estims: A list of m estimated accuracy.
-        acc_reals: A list of m real accuracy.
-
-    """
-
-    ckpt_savname = f"./{dataset}_{mode}_{confidence_scores}_{estim_algorithm}_{class_specific}.pkl"
-
-    moval_model = moval.MOVAL.load(ckpt_savname)
-
-    # save the test err in the result files.
-
-    err_tests = []
-    acc_estims = []
-    acc_reals = []
-    for k_test in range(len(logits_tests)):
-
-        _logits_test = logits_tests[k_test]
-        _gt_test = gt_tests[k_test]
-
-        estim_acc_test = moval_model.estimate(_logits_test)
-        pred_test = np.argmax(_logits_test, axis = 1)
-        err_test = np.abs( np.sum(_gt_test == pred_test) / len(_gt_test) - estim_acc_test )
-        #
-        err_tests.append(err_test)
-        acc_estims.append(estim_acc_test)
-        acc_reals.append(np.sum(_gt_test == pred_test) / len(_gt_test))
-
-    return err_tests, acc_estims, acc_reals
 
 def main():
 
@@ -105,9 +59,10 @@ def main():
 
     for k_cond in range(len(moval_options)):
 
-        err_test, acc_estim, acc_real = test_cls(
+        err_test, metric_estim, metric_real = test_cls(
             estim_algorithm = moval_options[k_cond][0],
             mode = moval_options[k_cond][1],
+            metric = args.metric,
             confidence_scores = moval_options[k_cond][2],
             class_specific = moval_options[k_cond][3],
             logits_tests = logits_tests,
@@ -115,7 +70,7 @@ def main():
             dataset = args.dataset
         )
 
-        test_condition = f"estim_algorithm = {moval_options[k_cond][0]}, mode = {moval_options[k_cond][1]}, confidence_scores = {moval_options[k_cond][2]}, class_specific = {moval_options[k_cond][3]}"
+        test_condition = f"estim_algorithm = {moval_options[k_cond][0]}, mode = {moval_options[k_cond][1]}, metric = {args.metric}, confidence_scores = {moval_options[k_cond][2]}, class_specific = {moval_options[k_cond][3]}"
 
         with open(results_files, 'a') as f:
             f.write(test_condition)
@@ -124,10 +79,10 @@ def main():
             f.write(str(err_test))
             f.write('\n')
             f.write("estimated acc: ")
-            f.write(str(acc_estim))
+            f.write(str(metric_estim))
             f.write('\n')
             f.write("real acc: ")
-            f.write(str(acc_real))
+            f.write(str(metric_real))
             f.write('\n')
             f.write('\n')
 

@@ -15,8 +15,9 @@ import numpy as np
 
 
 parser = argparse.ArgumentParser(description='Estimating MOVAL Parameters for classification Performance Evaluation')
-parser.add_argument('--dataset', default='', type=str, help='saving checkpoint name, CIFAR10 | CIFAR10ci1 | CIFAR10ci2 | CIFAR10rl1 | CIFAR10rl2 | CIFAR100 | HAM')
+parser.add_argument('--dataset', default='CIFAR10', type=str, help='saving checkpoint name, CIFAR10 | CIFAR10ci1 | CIFAR10ci2 | CIFAR10rl1 | CIFAR10rl2 | CIFAR100 | HAM')
 parser.add_argument('--numcls', default=10, type=int, help='number of class for model fitting')
+parser.add_argument('--metric', default='accuracy', type=str, help='type of estimation metrics, accuracy | sensitivity | precision | f1score | auc')
 parser.add_argument('--valpath', default='', type=str, help='csv path of the validation prediction conditions')
 
 args = parser.parse_args()
@@ -51,6 +52,7 @@ def main():
 
         moval_model = moval.MOVAL(
             mode = mode,
+            metric = args.metric,
             confidence_scores = confidence_scores,
             estim_algorithm = estim_algorithm,
             class_specific = class_specific
@@ -59,7 +61,7 @@ def main():
         #
         moval_model.fit(logits_val, gt_val)
 
-        ckpt_savname = f"./{args.dataset}_{mode}_{confidence_scores}_{estim_algorithm}_{class_specific}.pkl"
+        ckpt_savname = f"./{args.dataset}_{mode}_{args.metric}_{confidence_scores}_{estim_algorithm}_{class_specific}.pkl"
 
         moval_model.save(ckpt_savname)
 

@@ -19,6 +19,7 @@ import numpy as np
 parser = argparse.ArgumentParser(description='Estimating MOVAL Parameters for 2d segmentation Performance Evaluation')
 parser.add_argument('--dataset', default='', type=str, help='saving checkpoint name, Cardiac | Prostate | Brainlesion')
 parser.add_argument('--predpath', default='/well/win-fmrib-analysis/users/gqu790/moval/Robust-Medical-Segmentation/output/cardiac/cardiacval/results', type=str, help='pred path of the validation cases')
+parser.add_argument('--metric', default='accuracy', type=str, help='type of estimation metrics, accuracy | sensitivity | precision | f1score | auc')
 parser.add_argument('--gtpath', default='/well/win-fmrib-analysis/users/gqu790/moval/Robust-Medical-Segmentation/data/Dataset_Cardiac/1', type=str, help='gt path of the validation cases')
 
 args = parser.parse_args()
@@ -86,6 +87,7 @@ def main():
 
         moval_model = moval.MOVAL(
                 mode = mode,
+                metric = args.metric,
                 confidence_scores = confidence_scores,
                 estim_algorithm = estim_algorithm,
                 class_specific = class_specific
@@ -96,7 +98,7 @@ def main():
         #
         moval_model.fit(logits, gt)
 
-        ckpt_savname = f"./{args.dataset}_{mode}2d_{confidence_scores}_{estim_algorithm}_{class_specific}.pkl"
+        ckpt_savname = f"./{args.dataset}_{mode}_{args.metric}_{confidence_scores}_{estim_algorithm}_{class_specific}.pkl"
 
         moval_model.save(ckpt_savname)
 
