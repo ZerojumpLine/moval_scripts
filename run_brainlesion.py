@@ -35,7 +35,7 @@ metrics = ["f1score", "accuracy", "sensitivity", "precision", "auc"]
 datapath = '/well/win-fmrib-analysis/users/gqu790/moval/Robust-Medical-Segmentation/data/Dataset_Brain_lesion'
 
 # estimate 36 conditions
-with open('./brainlesion_estim.txt', 'w') as fpr:
+with open('./brainlesion_estim_dsc.txt', 'w') as fpr:
     metric = metrics[0]
     for training_cond in training_conds:
         
@@ -46,10 +46,24 @@ with open('./brainlesion_estim.txt', 'w') as fpr:
         gtpath = f"{datapath}/Siemens Trio"
         fpr.write(cmd_estim.format(dataset=dataset, predpath=f'"{predpath}"', metric=metric, gtpath=f'"{gtpath}"'))
 
-print(f'fsl_sub -q short -R 128 -l logs -t ./brainlesion_estim.txt')
+print(f'fsl_sub -q short -R 128 -l logs -t ./brainlesion_estim_dsc.txt')
+
+# estimate 36 conditions for 4 other metrics
+with open('./brainlesion_estim_4metrics.txt', 'w') as fpr:
+    training_cond = training_conds[0]
+    for metric in metrics[1:]:
+        
+        ext = training_cond.split('/')[-1][-3:]
+        dataset = f"Brainlesion{ext}"
+
+        predpath = f"{training_cond}/atlasval/results"
+        gtpath = f"{datapath}/Siemens Trio"
+        fpr.write(cmd_estim.format(dataset=dataset, predpath=f'"{predpath}"', metric=metric, gtpath=f'"{gtpath}"'))
+
+print(f'fsl_sub -q short -R 128 -l logs -t ./brainlesion_estim_4metrics.txt')
 
 # evaluate 36 condtions for all test conditions
-with open('./brainlesion_eval.txt', 'w') as fpr:
+with open('./brainlesion_eval_dsc.txt', 'w') as fpr:
     metric = metrics[0]
     for training_cond in training_conds:
 
@@ -70,4 +84,30 @@ with open('./brainlesion_eval.txt', 'w') as fpr:
             savingpath = f"./results_{dataset}_{training_cond}_{metric}_nat_{test_nat_cond}.txt"
             fpr.write(cmd_eval.format(dataset=dataset, predpath=f'"{predpath}"', gtpath=f'"{gtpath}"', metric=metric, savingpath=f'"{savingpath}"'))
 
-print(f'fsl_sub -q short -R 128 -l logs -t ./brainlesion_eval.txt')
+print(f'fsl_sub -q short -R 128 -l logs -t ./brainlesion_eval_dsc.txt')
+
+# evaluate 36 condtions for 4 other metrics
+with open('./brainlesion_eval_4metrics.txt', 'w') as fpr:
+    training_cond = training_conds[0]
+    for metric in metrics[1:]:
+
+        ext = training_cond.split('/')[-1][-3:]
+        dataset = f"Brainlesion{ext}"
+
+        for test_syn_cond in test_syn_conds:
+
+            predpath = f"{training_cond}/atlastestcondition_{test_syn_cond}/results"
+            gtpath = f"{datapath}/Siemens Trio"
+            savingpath = f"./results_{dataset}_{training_cond}_{metric}_syn_{test_syn_cond}.txt"
+            fpr.write(cmd_eval.format(dataset=dataset, predpath=f'"{predpath}"', gtpath=f'"{gtpath}"', metric=metric, savingpath=f'"{savingpath}"'))
+        
+        for test_nat_cond in test_nat_conds:
+
+            predpath = f"{training_cond}/atlastest_{test_nat_cond}/results"
+            gtpath = f"{datapath}/{test_nat_cond}"
+            savingpath = f"./results_{dataset}_{training_cond}_{metric}_nat_{test_nat_cond}.txt"
+            fpr.write(cmd_eval.format(dataset=dataset, predpath=f'"{predpath}"', gtpath=f'"{gtpath}"', metric=metric, savingpath=f'"{savingpath}"'))
+
+print(f'fsl_sub -q short -R 128 -l logs -t ./brainlesion_eval_4metrics.txt')
+
+
