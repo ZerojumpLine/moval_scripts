@@ -49,13 +49,13 @@ with open('./skinlesion_eval.txt', 'w') as fpr:
 
                 for knum in range(1, 6):
                     testpath = f"{training_cond}/predictions_test_{test_syn_cond}_{knum}.csv"
-                    savingpath = f"./results_{dataset}_{test_syn_cond}.txt"
+                    savingpath = f"./results_{dataset}_{metric}_{test_syn_cond}_{knum}.txt"
                     fpr.write(cmd_eval.format(dataset=dataset, testpath=f'"{testpath}"', metric=metric, savingpath=f'"{savingpath}"'))
             
             for testnat_cond in test_nat_conds:
 
                 testpath = f"{training_cond}/predictions_test_{testnat_cond}.csv"
-                savingpath = f"./results_{dataset}_{training_cond}_{metric}_{test_syn_cond}.txt"
+                savingpath = f"./results_{dataset}_{metric}_{testnat_cond}.txt"
                 fpr.write(cmd_eval.format(dataset=dataset, testpath=f'"{testpath}"', metric=metric, savingpath=f'"{savingpath}"'))
 
 print(f'fsl_sub -q short -R 128 -l logs -t ./skinlesion_eval.txt')

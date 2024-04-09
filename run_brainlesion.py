@@ -74,14 +74,14 @@ with open('./brainlesion_eval_dsc.txt', 'w') as fpr:
 
             predpath = f"{training_cond}/atlastestcondition_{test_syn_cond}/results"
             gtpath = f"{datapath}/Siemens Trio"
-            savingpath = f"./results_{dataset}_{training_cond}_{metric}_syn_{test_syn_cond}.txt"
+            savingpath = f"./results_{dataset}_{metric}_syn_{test_syn_cond}.txt"
             fpr.write(cmd_eval.format(dataset=dataset, predpath=f'"{predpath}"', gtpath=f'"{gtpath}"', metric=metric, savingpath=f'"{savingpath}"'))
         
         for test_nat_cond in test_nat_conds:
 
             predpath = f"{training_cond}/atlastest_{test_nat_cond}/results"
             gtpath = f"{datapath}/{test_nat_cond}"
-            savingpath = f"./results_{dataset}_{training_cond}_{metric}_nat_{test_nat_cond}.txt"
+            savingpath = f"./results_{dataset}_{metric}_nat_{test_nat_cond}.txt"
             fpr.write(cmd_eval.format(dataset=dataset, predpath=f'"{predpath}"', gtpath=f'"{gtpath}"', metric=metric, savingpath=f'"{savingpath}"'))
 
 print(f'fsl_sub -q short -R 128 -l logs -t ./brainlesion_eval_dsc.txt')
@@ -98,14 +98,14 @@ with open('./brainlesion_eval_4metrics.txt', 'w') as fpr:
 
             predpath = f"{training_cond}/atlastestcondition_{test_syn_cond}/results"
             gtpath = f"{datapath}/Siemens Trio"
-            savingpath = f"./results_{dataset}_{training_cond}_{metric}_syn_{test_syn_cond}.txt"
+            savingpath = f"./results_{dataset}_{metric}_syn_{test_syn_cond}.txt"
             fpr.write(cmd_eval.format(dataset=dataset, predpath=f'"{predpath}"', gtpath=f'"{gtpath}"', metric=metric, savingpath=f'"{savingpath}"'))
         
         for test_nat_cond in test_nat_conds:
 
             predpath = f"{training_cond}/atlastest_{test_nat_cond}/results"
             gtpath = f"{datapath}/{test_nat_cond}"
-            savingpath = f"./results_{dataset}_{training_cond}_{metric}_nat_{test_nat_cond}.txt"
+            savingpath = f"./results_{dataset}_{metric}_nat_{test_nat_cond}.txt"
             fpr.write(cmd_eval.format(dataset=dataset, predpath=f'"{predpath}"', gtpath=f'"{gtpath}"', metric=metric, savingpath=f'"{savingpath}"'))
 
 print(f'fsl_sub -q short -R 128 -l logs -t ./brainlesion_eval_4metrics.txt')
