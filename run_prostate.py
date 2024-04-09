@@ -35,7 +35,7 @@ with open('./prostate_estim.txt', 'w') as fpr:
             gtpath = f"{datapath}/BMC"
             fpr.write(cmd_estim.format(dataset=dataset, predpath=f'"{predpath}"', metric=metric, gtpath=f'"{gtpath}"'))
 
-print(f'fsl_sub -q short -R 128 -l logs -t ./prostate_estim.txt')
+print(f'fsl_sub -q long -R 128 -l logs -t ./prostate_estim.txt')
 
 # evaluate 36 condtions for all test conditions
 with open('./prostate_eval.txt', 'w') as fpr:
@@ -56,4 +56,4 @@ with open('./prostate_eval.txt', 'w') as fpr:
                 savingpath = f"./results_{dataset}_{metric}_nat_{test_nat_cond}.txt"
                 fpr.write(cmd_eval.format(dataset=dataset, predpath=f'"{predpath}"', gtpath=f'"{gtpath}"', metric=metric, savingpath=f'"{savingpath}"'))
 
-print(f'fsl_sub -q short -R 128 -l logs -t ./prostate_eval.txt')
+print(f'fsl_sub -q long -R 128 -l logs -t ./prostate_eval.txt')

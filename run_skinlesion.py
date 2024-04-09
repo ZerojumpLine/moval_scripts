@@ -38,7 +38,7 @@ with open('./skinlesion_estim.txt', 'w') as fpr:
             valpath = f"{training_cond}/predictions_val.csv"
             fpr.write(cmd_estim.format(dataset=dataset, numcls=numcls, metric=metric, valpath=f'"{valpath}"'))
 
-print(f'fsl_sub -q short -R 128 -l logs -t ./skinlesion_estim.txt')
+print(f'fsl_sub -q long -R 128 -l logs -t ./skinlesion_estim.txt')
 
 # evaluate 36 condtions for all test conditions
 with open('./skinlesion_eval.txt', 'w') as fpr:
@@ -58,4 +58,4 @@ with open('./skinlesion_eval.txt', 'w') as fpr:
                 savingpath = f"./results_{dataset}_{metric}_{testnat_cond}.txt"
                 fpr.write(cmd_eval.format(dataset=dataset, testpath=f'"{testpath}"', metric=metric, savingpath=f'"{savingpath}"'))
 
-print(f'fsl_sub -q short -R 128 -l logs -t ./skinlesion_eval.txt')
+print(f'fsl_sub -q long -R 128 -l logs -t ./skinlesion_eval.txt')

@@ -46,7 +46,7 @@ with open('./brainlesion_estim_dsc.txt', 'w') as fpr:
         gtpath = f"{datapath}/Siemens Trio"
         fpr.write(cmd_estim.format(dataset=dataset, predpath=f'"{predpath}"', metric=metric, gtpath=f'"{gtpath}"'))
 
-print(f'fsl_sub -q short -R 128 -l logs -t ./brainlesion_estim_dsc.txt')
+print(f'fsl_sub -q long -R 128 -l logs -t ./brainlesion_estim_dsc.txt')
 
 # estimate 36 conditions for 4 other metrics
 with open('./brainlesion_estim_4metrics.txt', 'w') as fpr:
@@ -60,7 +60,7 @@ with open('./brainlesion_estim_4metrics.txt', 'w') as fpr:
         gtpath = f"{datapath}/Siemens Trio"
         fpr.write(cmd_estim.format(dataset=dataset, predpath=f'"{predpath}"', metric=metric, gtpath=f'"{gtpath}"'))
 
-print(f'fsl_sub -q short -R 128 -l logs -t ./brainlesion_estim_4metrics.txt')
+print(f'fsl_sub -q long -R 128 -l logs -t ./brainlesion_estim_4metrics.txt')
 
 # evaluate 36 condtions for all test conditions
 with open('./brainlesion_eval_dsc.txt', 'w') as fpr:
@@ -84,7 +84,7 @@ with open('./brainlesion_eval_dsc.txt', 'w') as fpr:
             savingpath = f"./results_{dataset}_{metric}_nat_{test_nat_cond}.txt"
             fpr.write(cmd_eval.format(dataset=dataset, predpath=f'"{predpath}"', gtpath=f'"{gtpath}"', metric=metric, savingpath=f'"{savingpath}"'))
 
-print(f'fsl_sub -q short -R 128 -l logs -t ./brainlesion_eval_dsc.txt')
+print(f'fsl_sub -q long -R 128 -l logs -t ./brainlesion_eval_dsc.txt')
 
 # evaluate 36 condtions for 4 other metrics
 with open('./brainlesion_eval_4metrics.txt', 'w') as fpr:
@@ -108,6 +108,6 @@ with open('./brainlesion_eval_4metrics.txt', 'w') as fpr:
             savingpath = f"./results_{dataset}_{metric}_nat_{test_nat_cond}.txt"
             fpr.write(cmd_eval.format(dataset=dataset, predpath=f'"{predpath}"', gtpath=f'"{gtpath}"', metric=metric, savingpath=f'"{savingpath}"'))
 
-print(f'fsl_sub -q short -R 128 -l logs -t ./brainlesion_eval_4metrics.txt')
+print(f'fsl_sub -q long -R 128 -l logs -t ./brainlesion_eval_4metrics.txt')
 
 
