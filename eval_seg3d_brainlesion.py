@@ -27,7 +27,7 @@ parser.add_argument('--savingpath', default='./results_brainlesion_syn.txt', typ
 args = parser.parse_args()
 
 def test_cls(estim_algorithm, mode, metric, confidence_scores, class_specific, logits_test, gt_test, dataset):
-    """Test MOVAL with different conditions for 3d segmentation tasks
+    """Test MOVAL with different conditions for 2d/3d segmentation tasks
 
     Args:
         mode (str): The given task to estimate model performance.
@@ -50,7 +50,7 @@ def test_cls(estim_algorithm, mode, metric, confidence_scores, class_specific, l
 
     """
 
-    ckpt_savname = f"./{dataset}_{mode}3d_{metric}_{confidence_scores}_{estim_algorithm}_{class_specific}.pkl"
+    ckpt_savname = f"./{dataset}_{mode}_{metric}_{confidence_scores}_{estim_algorithm}_{class_specific}.pkl"
 
     moval_model = moval.MOVAL.load(ckpt_savname)
 
