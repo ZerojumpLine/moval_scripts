@@ -1,0 +1,45 @@
+estim_algorithm = ac-model, mode = segmentation, metric = f1score, confidence_scores = max_class_probability-conf, class_specific = False
+test err: 0.5834947063544837
+estimated metric: [0.99994468 0.9897677 ]
+real metric: [0.         0.82272296]
+
+estim_algorithm = ac-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
+test err: 0.5016558007488019
+estimated metric: [0.39505918 0.21447054]
+real metric: [0.         0.82272296]
+
+estim_algorithm = ac-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False
+test err: 0.5692001064215182
+estimated metric: [0.99978439 0.96133879]
+real metric: [0.         0.82272296]
+
+estim_algorithm = ac-model, mode = segmentation, metric = f1score, confidence_scores = doctor-conf, class_specific = False
+test err: 0.5768630138977053
+estimated metric: [0.99987635 0.97657264]
+real metric: [0.         0.82272296]
+
+estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = max_class_probability-conf, class_specific = False
+test err: 0.574613912874999
+estimated metric: [0.99959078 0.97236001]
+real metric: [0.         0.82272296]
+
+estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = max_class_probability-conf, class_specific = True
+test err: 0.5024176414347531
+estimated metric: [0.99959078 0.81747846]
+real metric: [0.         0.82272296]
+
+estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
+test err: 0.4980940320220201
+estimated metric: [0.41375318 0.24028808]
+real metric: [0.         0.82272296]
+
+estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
+test err: 0.20899447340155652
+estimated metric: [0.41322648 0.8179605 ]
+real metric: [0.         0.82272296]
+
+estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False
+test err: 0.5634023124811585
+estimated metric: [0.99968402 0.94984356]
+real metric: [0.         0.82272296]
+

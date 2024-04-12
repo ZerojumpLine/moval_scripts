@@ -1,0 +1,15 @@
+estim_algorithm = ac-model, mode = segmentation, metric = f1score, confidence_scores = max_class_probability-conf, class_specific = False
+test err: 0.5948806144827439
+estimated metric: [0.99996731 0.99476217]
+real metric: [0.         0.80496826]
+
+estim_algorithm = ac-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
+test err: 0.44945337822417486
+estimated metric: [0.13485159 0.04091309]
+real metric: [0.         0.80496826]
+
+estim_algorithm = ac-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False
+test err: 0.586696467008444
+estimated metric: [0.99985829 0.9785029 ]
+real metric: [0.         0.80496826]
+

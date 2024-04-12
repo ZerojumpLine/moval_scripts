@@ -1,0 +1,45 @@
+estim_algorithm = ac-model, mode = segmentation, metric = f1score, confidence_scores = max_class_probability-conf, class_specific = False
+test err: 0.7309801633104427
+estimated metric: [0.99705618 0.95781333]
+real metric: [0.         0.49290919]
+
+estim_algorithm = ac-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
+test err: 0.378847057464732
+estimated metric: [0.38915414 0.12436921]
+real metric: [0.         0.49290919]
+
+estim_algorithm = ac-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False
+test err: 0.6690283669669055
+estimated metric: [0.99352686 0.83743906]
+real metric: [0.         0.49290919]
+
+estim_algorithm = ac-model, mode = segmentation, metric = f1score, confidence_scores = doctor-conf, class_specific = False
+test err: 0.6989874801021478
+estimated metric: [0.99401057 0.89687358]
+real metric: [0.         0.49290919]
+
+estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = max_class_probability-conf, class_specific = False
+test err: 0.7091871505769918
+estimated metric: [0.99623434 0.91504915]
+real metric: [0.         0.49290919]
+
+estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = max_class_probability-conf, class_specific = True
+test err: 0.632895528451328
+estimated metric: [0.99623434 0.7624659 ]
+real metric: [0.         0.49290919]
+
+estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
+test err: 0.374934132732531
+estimated metric: [0.40780844 0.15084937]
+real metric: [0.         0.49290919]
+
+estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
+test err: 0.3643462330666076
+estimated metric: [0.40727442 0.81432724]
+real metric: [0.         0.49290919]
+
+estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False
+test err: 0.6511793571900222
+estimated metric: [0.99313747 0.80213044]
+real metric: [0.         0.49290919]
+

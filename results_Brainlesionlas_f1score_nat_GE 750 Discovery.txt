@@ -1,0 +1,45 @@
+estim_algorithm = ac-model, mode = segmentation, metric = f1score, confidence_scores = max_class_probability-conf, class_specific = False
+test err: 0.8523167469922512
+estimated metric: [0.99999028 0.96587146]
+real metric: [0.         0.26122825]
+
+estim_algorithm = ac-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
+test err: 0.04737952234932453
+estimated metric: [0.06866615 0.23513535]
+real metric: [0.         0.26122825]
+
+estim_algorithm = ac-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False
+test err: 0.8063652442197629
+estimated metric: [0.99996365 0.87399509]
+real metric: [0.         0.26122825]
+
+estim_algorithm = ac-model, mode = segmentation, metric = f1score, confidence_scores = doctor-conf, class_specific = False
+test err: 0.8226073891028798
+estimated metric: [0.9999788  0.90646423]
+real metric: [0.         0.26122825]
+
+estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = max_class_probability-conf, class_specific = False
+test err: 0.8411589320088941
+estimated metric: [0.9998772  0.94366891]
+real metric: [0.         0.26122825]
+
+estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = max_class_probability-conf, class_specific = True
+test err: 0.7839753143283608
+estimated metric: [0.9998772  0.82930168]
+real metric: [0.         0.26122825]
+
+estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
+test err: 0.047714907226364955
+estimated metric: [0.0706938  0.23649223]
+real metric: [0.         0.26122825]
+
+estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
+test err: 0.3274895479361852
+estimated metric: [0.07050653 0.84570081]
+real metric: [0.         0.26122825]
+
+estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False
+test err: 0.7992000084476036
+estimated metric: [0.99994868 0.85967959]
+real metric: [0.         0.26122825]
+

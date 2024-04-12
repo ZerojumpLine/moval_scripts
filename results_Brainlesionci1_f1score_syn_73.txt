@@ -1,0 +1,25 @@
+estim_algorithm = ac-model, mode = segmentation, metric = f1score, confidence_scores = max_class_probability-conf, class_specific = False
+test err: 0.5971098913431516
+estimated metric: [0.99996634 0.99429561]
+real metric: [0.         0.80004217]
+
+estim_algorithm = ac-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
+test err: 0.44816524354645404
+estimated metric: [0.13757015 0.04128183]
+real metric: [0.         0.80004217]
+
+estim_algorithm = ac-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False
+test err: 0.5885459038817284
+estimated metric: [0.99985452 0.97727945]
+real metric: [0.         0.80004217]
+
+estim_algorithm = ac-model, mode = segmentation, metric = f1score, confidence_scores = doctor-conf, class_specific = False
+test err: 0.5935156407104922
+estimated metric: [0.99992563 0.98714782]
+real metric: [0.         0.80004217]
+
+estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = max_class_probability-conf, class_specific = False
+test err: 0.5878206751734497
+estimated metric: [0.99964128 0.97604224]
+real metric: [0.         0.80004217]
+

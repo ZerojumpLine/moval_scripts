@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/well/win-fmrib-analysis/users/gqu790/moval/moval_scripts/eval_seg3d_brainlesion.py", line 269, in <module>
+    main()
+  File "/well/win-fmrib-analysis/users/gqu790/moval/moval_scripts/eval_seg3d_brainlesion.py", line 240, in main
+    err_test, metric_estim, metric_real = test_cls(
+  File "/well/win-fmrib-analysis/users/gqu790/moval/moval_scripts/eval_seg3d_brainlesion.py", line 68, in test_cls
+    estim_metric_test = moval_model.estimate(logits_test, gt_guide = gt_guide_test)
+  File "/well/win-fmrib-analysis/users/gqu790/conda/skylake/envs/moval/lib/python3.8/site-packages/moval/integrations/sklearn/moval.py", line 446, in estimate
+    return self.estimate_f1score(logits, gt_guide)
+  File "/well/win-fmrib-analysis/users/gqu790/conda/skylake/envs/moval/lib/python3.8/site-packages/moval/integrations/sklearn/moval.py", line 688, in estimate_f1score
+    probability = self.get_probability(logits)
+  File "/well/win-fmrib-analysis/users/gqu790/conda/skylake/envs/moval/lib/python3.8/site-packages/moval/integrations/sklearn/moval.py", line 489, in get_probability
+    probability = model.calculate_probability(logits, appr = True)
+  File "/well/win-fmrib-analysis/users/gqu790/conda/skylake/envs/moval/lib/python3.8/site-packages/moval/models/model.py", line 457, in calculate_probability
+    return self.calculate_probability_appr(inp, midstage, full)
+  File "/well/win-fmrib-analysis/users/gqu790/conda/skylake/envs/moval/lib/python3.8/site-packages/moval/models/model.py", line 565, in calculate_probability_appr
+    score = self.calibrate(inp)
+  File "/well/win-fmrib-analysis/users/gqu790/conda/skylake/envs/moval/lib/python3.8/site-packages/moval/models/model.py", line 636, in calibrate
+    score = self.conf(inp) # ``(n,)`` for classification or a list of n ``(H, W, (D))`` for segmentation
+  File "/well/win-fmrib-analysis/users/gqu790/conda/skylake/envs/moval/lib/python3.8/site-packages/moval/models/confidences.py", line 101, in __call__
+    conf_score = self.cal_func(inp_case, T)
+  File "/well/win-fmrib-analysis/users/gqu790/conda/skylake/envs/moval/lib/python3.8/site-packages/moval/models/utils.py", line 96, in cal_doctor
+    p = cal_softmax(x, T = T)
+  File "/well/win-fmrib-analysis/users/gqu790/conda/skylake/envs/moval/lib/python3.8/site-packages/moval/models/utils.py", line 18, in cal_softmax
+    x_max = np.max(x, keepdims=True, axis = 1).repeat(x.shape[1], axis=1)
+numpy.core._exceptions.MemoryError: Unable to allocate 132. MiB for an array with shape (8675289, 2) and data type float64
