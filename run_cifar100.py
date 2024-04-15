@@ -5,7 +5,7 @@
 import os
 
 bin = '/well/win-fmrib-analysis/users/gqu790/conda/skylake/envs/moval/bin/python'
-cmd_estim = bin + ' /well/win-fmrib-analysis/users/gqu790/moval/moval_scripts/estim_cls.py --dataset {dataset} --numcls {numcls} --metric {metric} --valpath {valpath} \n'
+cmd_estim = bin + ' /well/win-fmrib-analysis/users/gqu790/moval/moval_scripts/estim_cls.py --dataset {dataset} --numcls {numcls} --metric {metric} --valpath {valpath} --batch {batch} \n'
 cmd_eval = bin + ' /well/win-fmrib-analysis/users/gqu790/moval/moval_scripts/eval_cls_cifar100.py --dataset {dataset} --testpath {testpath} --metric {metric} --savingpath {savingpath} \n'
 
 ## baseline training
@@ -25,14 +25,14 @@ metrics = ["accuracy", "sensitivity", "precision", "f1score", "auc"]
 
 dataset = 'CIFAR100'
 numcls = 100
-
+batch = 1
 
 # estimate 36 conditions
 with open('./cifar100_estim.txt', 'w') as fpr:
     for metric in metrics:
         for training_cond in training_conds:
             valpath = f"{training_cond}/predictions_val.csv"
-            fpr.write(cmd_estim.format(dataset=dataset, numcls=numcls, metric=metric, valpath=f'"{valpath}"'))
+            fpr.write(cmd_estim.format(dataset=dataset, numcls=numcls, metric=metric, valpath=f'"{valpath}"', batch = batch))
 
 print(f'fsl_sub -q long -R 128 -l logs -t ./cifar100_estim.txt')
 

@@ -153,3 +153,28 @@ test err: 0.7458335181549862
 estimated metric: [0.99999999 0.99998896]
 real metric: [0.         0.50832191]
 
+estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
+test err: 0.07312807375484383
+estimated metric: [1.15731776e-12 6.54578062e-01]
+real metric: [0.         0.50832191]
+
+estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False
+test err: 0.6862018733229684
+estimated metric: [0.99954602 0.88117964]
+real metric: [0.         0.50832191]
+
+estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = True
+test err: 0.07504642392075998
+estimated metric: [4.28800981e-04 6.57985962e-01]
+real metric: [0.         0.50832191]
+
+estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = doctor-conf, class_specific = False
+test err: 0.6862019657555745
+estimated metric: [0.99954602 0.88117982]
+real metric: [0.         0.50832191]
+
+estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = doctor-conf, class_specific = True
+test err: 0.07483294816898396
+estimated metric: [1.15731776e-12 6.57987811e-01]
+real metric: [0.         0.50832191]
+

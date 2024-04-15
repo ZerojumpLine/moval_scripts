@@ -168,3 +168,13 @@ test err: 0.322726945084742
 estimated metric: [0.39486014 0.73679493]
 real metric: [0.         0.48620118]
 
+estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = doctor-conf, class_specific = False
+test err: 0.7055229277877155
+estimated metric: [0.9995417  0.89770533]
+real metric: [0.         0.48620118]
+
+estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = doctor-conf, class_specific = True
+test err: 0.12529699409581768
+estimated metric: [1.15701631e-12 7.36795167e-01]
+real metric: [0.         0.48620118]
+
