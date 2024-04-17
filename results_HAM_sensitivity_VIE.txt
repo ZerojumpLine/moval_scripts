@@ -176,3 +176,37 @@ estimated acc: [array([1.        , 1.        , 1.        , 1.        , 1.       
        0.99977138, 1.        ])]
 real acc: [array([0.5, 0.5, 0.5, 0.5, 0. , 1. , 0.5])]
 
+estim_algorithm = ts-atc-model, mode = classification, metric = sensitivity, confidence_scores = energy-conf, class_specific = False
+test err: [0.5009144947395645]
+estimated acc: [array([1.        , 1.        , 1.        , 1.        , 1.        ,
+       0.99359854, 1.        ])]
+real acc: [array([0.5, 0.5, 0.5, 0.5, 0. , 1. , 0.5])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = sensitivity, confidence_scores = energy-conf, class_specific = True
+test err: [0.5012737605301076]
+estimated acc: [array([1.        , 1.        , 1.        , 1.        , 1.        ,
+       0.99108368, 1.        ])]
+real acc: [array([0.5, 0.5, 0.5, 0.5, 0. , 1. , 0.5])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = sensitivity, confidence_scores = entropy-conf, class_specific = False
+test err: [0.5003592657905431]
+estimated acc: [array([1.        , 1.        , 1.        , 1.        , 1.        ,
+       0.99748514, 1.        ])]
+real acc: [array([0.5, 0.5, 0.5, 0.5, 0. , 1. , 0.5])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = sensitivity, confidence_scores = entropy-conf, class_specific = True
+test err: [0.5]
+estimated acc: [array([1., 1., 1., 1., 1., 1., 1.])]
+real acc: [array([0.5, 0.5, 0.5, 0.5, 0. , 1. , 0.5])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = sensitivity, confidence_scores = doctor-conf, class_specific = False
+test err: [0.5004899078961953]
+estimated acc: [array([1.        , 1.        , 1.        , 1.        , 1.        ,
+       0.99657064, 1.        ])]
+real acc: [array([0.5, 0.5, 0.5, 0.5, 0. , 1. , 0.5])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = sensitivity, confidence_scores = doctor-conf, class_specific = True
+test err: [0.5]
+estimated acc: [array([1., 1., 1., 1., 1., 1., 1.])]
+real acc: [array([0.5, 0.5, 0.5, 0.5, 0. , 1. , 0.5])]
+

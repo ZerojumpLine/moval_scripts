@@ -104,18 +104,18 @@ estimated acc: [0.8527209186220669]
 real acc: [0.8462306540189716]
 
 estim_algorithm = atc-model, mode = classification, metric = accuracy, confidence_scores = max_class_probability-conf, class_specific = True
-test err: [0.004493260109835195]
-estimated acc: [0.8507239141288068]
+test err: [0.003494757863205189]
+estimated acc: [0.8497254118821768]
 real acc: [0.8462306540189716]
 
 estim_algorithm = atc-model, mode = classification, metric = accuracy, confidence_scores = energy-conf, class_specific = False
-test err: [0.007988017973040495]
-estimated acc: [0.8382426360459311]
+test err: [0.008487269096355443]
+estimated acc: [0.8377433849226161]
 real acc: [0.8462306540189716]
 
 estim_algorithm = atc-model, mode = classification, metric = accuracy, confidence_scores = energy-conf, class_specific = True
-test err: [0.008986520219670502]
-estimated acc: [0.8552171742386421]
+test err: [0.0014977533699450651]
+estimated acc: [0.8447329006490265]
 real acc: [0.8462306540189716]
 
 estim_algorithm = atc-model, mode = classification, metric = accuracy, confidence_scores = entropy-conf, class_specific = False
@@ -124,8 +124,8 @@ estimated acc: [0.8502246630054917]
 real acc: [0.8462306540189716]
 
 estim_algorithm = atc-model, mode = classification, metric = accuracy, confidence_scores = entropy-conf, class_specific = True
-test err: [0.011482775836245573]
-estimated acc: [0.8577134298552171]
+test err: [0.003994008986520137]
+estimated acc: [0.8502246630054917]
 real acc: [0.8462306540189716]
 
 estim_algorithm = atc-model, mode = classification, metric = accuracy, confidence_scores = doctor-conf, class_specific = False
@@ -134,8 +134,8 @@ estimated acc: [0.853719420868697]
 real acc: [0.8462306540189716]
 
 estim_algorithm = atc-model, mode = classification, metric = accuracy, confidence_scores = doctor-conf, class_specific = True
-test err: [0.008487269096355443]
-estimated acc: [0.854717923115327]
+test err: [0.0059910134797802606]
+estimated acc: [0.8522216674987518]
 real acc: [0.8462306540189716]
 
 estim_algorithm = ts-atc-model, mode = classification, metric = accuracy, confidence_scores = max_class_probability-conf, class_specific = False
@@ -146,5 +146,35 @@ real acc: [0.8462306540189716]
 estim_algorithm = ts-atc-model, mode = classification, metric = accuracy, confidence_scores = max_class_probability-conf, class_specific = True
 test err: [0.003494757863205189]
 estimated acc: [0.8497254118821768]
+real acc: [0.8462306540189716]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = accuracy, confidence_scores = energy-conf, class_specific = False
+test err: [0.0004992511233149477]
+estimated acc: [0.8467299051422865]
+real acc: [0.8462306540189716]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = accuracy, confidence_scores = energy-conf, class_specific = True
+test err: [0.6575137294058913]
+estimated acc: [0.18871692461308037]
+real acc: [0.8462306540189716]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = accuracy, confidence_scores = entropy-conf, class_specific = False
+test err: [0.0004992511233149477]
+estimated acc: [0.8467299051422865]
+real acc: [0.8462306540189716]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = accuracy, confidence_scores = entropy-conf, class_specific = True
+test err: [0.00948577134298545]
+estimated acc: [0.855716425361957]
+real acc: [0.8462306540189716]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = accuracy, confidence_scores = doctor-conf, class_specific = False
+test err: [0.0024962556165751826]
+estimated acc: [0.8437343984023964]
+real acc: [0.8462306540189716]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = accuracy, confidence_scores = doctor-conf, class_specific = True
+test err: [0.0059910134797802606]
+estimated acc: [0.8522216674987518]
 real acc: [0.8462306540189716]
 

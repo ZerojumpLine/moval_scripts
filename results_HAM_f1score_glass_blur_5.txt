@@ -146,8 +146,8 @@ real acc: [array([0.46153846, 0.77720207, 0.61460957, 0.64705882, 0.57608696,
        0.91466388, 0.92307692])]
 
 estim_algorithm = atc-model, mode = classification, metric = f1score, confidence_scores = max_class_probability-conf, class_specific = True
-test err: [0.1101659572353216]
-estimated acc: [array([0.5945947 , 0.75862071, 0.46086959, 0.84210535, 0.70535716,
+test err: [0.13783012836922656]
+estimated acc: [array([0.86956525, 0.75862071, 0.46086959, 0.53333364, 0.70535716,
        0.93305439, 0.80000005])]
 real acc: [array([0.46153846, 0.77720207, 0.61460957, 0.64705882, 0.57608696,
        0.91466388, 0.92307692])]
@@ -160,8 +160,8 @@ real acc: [array([0.46153846, 0.77720207, 0.61460957, 0.64705882, 0.57608696,
        0.91466388, 0.92307692])]
 
 estim_algorithm = atc-model, mode = classification, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: [0.15851989778531836]
-estimated acc: [array([0.79069772, 0.67647061, 0.51882847, 0.30769284, 0.61904764,
+test err: [0.17866639480328184]
+estimated acc: [array([0.79069772, 0.67647061, 0.51882847, 0.16666736, 0.61904764,
        0.93006993, 0.73684217])]
 real acc: [array([0.46153846, 0.77720207, 0.61460957, 0.64705882, 0.57608696,
        0.91466388, 0.92307692])]
@@ -188,8 +188,8 @@ real acc: [array([0.46153846, 0.77720207, 0.61460957, 0.64705882, 0.57608696,
        0.91466388, 0.92307692])]
 
 estim_algorithm = atc-model, mode = classification, metric = f1score, confidence_scores = doctor-conf, class_specific = True
-test err: [0.14870225086715944]
-estimated acc: [array([0.89361704, 0.75862071, 0.46086959, 0.84210535, 0.70535716,
+test err: [0.13364894489425386]
+estimated acc: [array([0.86956525, 0.75862071, 0.46086959, 0.53333364, 0.70535716,
        0.93305439, 0.82926833])]
 real acc: [array([0.46153846, 0.77720207, 0.61460957, 0.64705882, 0.57608696,
        0.91466388, 0.92307692])]
@@ -205,6 +205,48 @@ estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confide
 test err: [0.19841170265259903]
 estimated acc: [array([0.86956525, 0.72340427, 0.47413795, 0.16666736, 0.6757991 ,
        0.93491124, 0.73684217])]
+real acc: [array([0.46153846, 0.77720207, 0.61460957, 0.64705882, 0.57608696,
+       0.91466388, 0.92307692])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confidence_scores = energy-conf, class_specific = False
+test err: [0.13084155477793769]
+estimated acc: [array([0.47058839, 0.5826772 , 0.71739131, 0.90000005, 0.85826772,
+       0.9556314 , 0.95652175])]
+real acc: [array([0.46153846, 0.77720207, 0.61460957, 0.64705882, 0.57608696,
+       0.91466388, 0.92307692])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confidence_scores = energy-conf, class_specific = True
+test err: [0.1383198235557535]
+estimated acc: [array([0.63157904, 0.66666669, 0.5371901 , 0.16666736, 0.6757991 ,
+       0.93081761, 0.90909093])]
+real acc: [array([0.46153846, 0.77720207, 0.61460957, 0.64705882, 0.57608696,
+       0.91466388, 0.92307692])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confidence_scores = entropy-conf, class_specific = False
+test err: [0.1317385274092637]
+estimated acc: [array([0.63157904, 0.66666669, 0.6888889 , 0.90000005, 0.80658437,
+       0.95918367, 0.88372096])]
+real acc: [array([0.46153846, 0.77720207, 0.61460957, 0.64705882, 0.57608696,
+       0.91466388, 0.92307692])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confidence_scores = entropy-conf, class_specific = True
+test err: [0.1889625539286169]
+estimated acc: [array([0.84444448, 0.72340427, 0.48717951, 0.16666736, 0.64485983,
+       0.9378688 , 0.73684217])]
+real acc: [array([0.46153846, 0.77720207, 0.61460957, 0.64705882, 0.57608696,
+       0.91466388, 0.92307692])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confidence_scores = doctor-conf, class_specific = False
+test err: [0.12835334293200518]
+estimated acc: [array([0.55555568, 0.62595423, 0.70329671, 0.90000005, 0.81147542,
+       0.95741056, 0.95652175])]
+real acc: [array([0.46153846, 0.77720207, 0.61460957, 0.64705882, 0.57608696,
+       0.91466388, 0.92307692])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confidence_scores = doctor-conf, class_specific = True
+test err: [0.18494994310754026]
+estimated acc: [array([0.81818186, 0.71428573, 0.48717951, 0.16666736, 0.63207549,
+       0.93970894, 0.73684217])]
 real acc: [array([0.46153846, 0.77720207, 0.61460957, 0.64705882, 0.57608696,
        0.91466388, 0.92307692])]
 

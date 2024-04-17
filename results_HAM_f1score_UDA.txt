@@ -146,16 +146,16 @@ real acc: [array([0.23524787, 0.        , 0.13043478, 0.        , 0.22978723,
        0.81601732, 0.23524787])]
 
 estim_algorithm = atc-model, mode = classification, metric = f1score, confidence_scores = max_class_probability-conf, class_specific = True
-test err: [0.2900843499634123]
-estimated acc: [array([1.24999844e-06, 3.33334444e-01, 9.75611957e-02, 1.00000000e+00,
+test err: [0.31810898730273013]
+estimated acc: [array([6.66666944e-01, 3.33334444e-01, 9.75611957e-02, 1.00000000e+00,
        4.15094450e-01, 8.24601369e-01, 3.33332222e-06])]
 real acc: [array([0.23524787, 0.        , 0.13043478, 0.        , 0.22978723,
        0.81601732, 0.23524787])]
 
 estim_algorithm = atc-model, mode = classification, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: [0.35231917184050765]
+test err: [0.35197898869940747]
 estimated acc: [array([4.00000600e-01, 1.99999600e-06, 5.55555638e-01, 1.00000000e+00,
-       7.64705917e-01, 8.92703864e-01, 5.00001250e-01])]
+       7.64705917e-01, 8.90322582e-01, 5.00001250e-01])]
 real acc: [array([0.23524787, 0.        , 0.13043478, 0.        , 0.22978723,
        0.81601732, 0.23524787])]
 
@@ -205,6 +205,48 @@ estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confide
 test err: [0.3217219071711607]
 estimated acc: [array([7.69230947e-01, 3.33334444e-01, 1.42857347e-01, 1.00000000e+00,
        3.52941303e-01, 8.29931975e-01, 3.33332222e-06])]
+real acc: [array([0.23524787, 0.        , 0.13043478, 0.        , 0.22978723,
+       0.81601732, 0.23524787])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confidence_scores = energy-conf, class_specific = False
+test err: [0.3363261839832405]
+estimated acc: [array([2.22223086e-01, 1.99999600e-06, 6.31579012e-01, 1.00000000e+00,
+       7.27272769e-01, 8.93890676e-01, 5.00001250e-01])]
+real acc: [array([0.23524787, 0.        , 0.13043478, 0.        , 0.22978723,
+       0.81601732, 0.23524787])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confidence_scores = energy-conf, class_specific = True
+test err: [0.3774768308320988]
+estimated acc: [array([0.76923095, 0.33333444, 0.40816339, 1.        , 0.44444455,
+       0.83389831, 0.50000125])]
+real acc: [array([0.23524787, 0.        , 0.13043478, 0.        , 0.22978723,
+       0.81601732, 0.23524787])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confidence_scores = entropy-conf, class_specific = False
+test err: [0.38685959721483654]
+estimated acc: [array([1.24999844e-06, 3.33334444e-01, 5.81818258e-01, 1.00000000e+00,
+       6.00000067e-01, 8.98612594e-01, 3.33332222e-06])]
+real acc: [array([0.23524787, 0.        , 0.13043478, 0.        , 0.22978723,
+       0.81601732, 0.23524787])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confidence_scores = entropy-conf, class_specific = True
+test err: [0.3528375143555312]
+estimated acc: [array([9.33333378e-01, 3.33334444e-01, 1.86046701e-01, 1.00000000e+00,
+       3.52941303e-01, 8.40449440e-01, 3.33332222e-06])]
+real acc: [array([0.23524787, 0.        , 0.13043478, 0.        , 0.22978723,
+       0.81601732, 0.23524787])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confidence_scores = doctor-conf, class_specific = False
+test err: [0.34010528773504395]
+estimated acc: [array([1.24999844e-06, 1.99999600e-06, 5.28301976e-01, 1.00000000e+00,
+       6.66666720e-01, 8.91514502e-01, 3.33332222e-06])]
+real acc: [array([0.23524787, 0.        , 0.13043478, 0.        , 0.22978723,
+       0.81601732, 0.23524787])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confidence_scores = doctor-conf, class_specific = True
+test err: [0.31342911531627804]
+estimated acc: [array([6.66666944e-01, 3.33334444e-01, 1.86046701e-01, 1.00000000e+00,
+       3.52941303e-01, 8.31257080e-01, 3.33332222e-06])]
 real acc: [array([0.23524787, 0.        , 0.13043478, 0.        , 0.22978723,
        0.81601732, 0.23524787])]
 

@@ -114,8 +114,8 @@ estimated acc: [0.9919981710105167]
 real acc: [0.9901691815272062]
 
 estim_algorithm = atc-model, mode = classification, metric = accuracy, confidence_scores = energy-conf, class_specific = True
-test err: [0.002057613168724326]
-estimated acc: [0.9881115683584819]
+test err: [0.002743484224965731]
+estimated acc: [0.9874256973022405]
 real acc: [0.9901691815272062]
 
 estim_algorithm = atc-model, mode = classification, metric = accuracy, confidence_scores = entropy-conf, class_specific = False
@@ -146,5 +146,35 @@ real acc: [0.9901691815272062]
 estim_algorithm = ts-atc-model, mode = classification, metric = accuracy, confidence_scores = max_class_probability-conf, class_specific = True
 test err: [0.006401463191586632]
 estimated acc: [0.9965706447187929]
+real acc: [0.9901691815272062]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = accuracy, confidence_scores = energy-conf, class_specific = False
+test err: [0.003429355281207136]
+estimated acc: [0.9935985368084134]
+real acc: [0.9901691815272062]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = accuracy, confidence_scores = energy-conf, class_specific = True
+test err: [0.989254686785551]
+estimated acc: [0.0009144947416552355]
+real acc: [0.9901691815272062]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = accuracy, confidence_scores = entropy-conf, class_specific = False
+test err: [0.007315957933241912]
+estimated acc: [0.9974851394604481]
+real acc: [0.9901691815272062]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = accuracy, confidence_scores = entropy-conf, class_specific = True
+test err: [0.006401463191586632]
+estimated acc: [0.9965706447187929]
+real acc: [0.9901691815272062]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = accuracy, confidence_scores = doctor-conf, class_specific = False
+test err: [0.006401463191586632]
+estimated acc: [0.9965706447187929]
+real acc: [0.9901691815272062]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = accuracy, confidence_scores = doctor-conf, class_specific = True
+test err: [0.005258344764517586]
+estimated acc: [0.9954275262917238]
 real acc: [0.9901691815272062]
 

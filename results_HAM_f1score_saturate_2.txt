@@ -146,16 +146,16 @@ real acc: [array([0.15189873, 0.31155779, 0.33653846, 0.        , 0.17741935,
        0.84158087, 0.06666667])]
 
 estim_algorithm = atc-model, mode = classification, metric = f1score, confidence_scores = max_class_probability-conf, class_specific = True
-test err: [0.24690601826153352]
-estimated acc: [array([1.33333911e-01, 4.88189017e-01, 1.33333375e-01, 1.00000000e+00,
+test err: [0.2977420870525803]
+estimated acc: [array([5.26316039e-01, 4.88189017e-01, 1.33333375e-01, 1.00000000e+00,
        7.69234320e-02, 6.78797470e-01, 4.99997500e-06])]
 real acc: [array([0.15189873, 0.31155779, 0.33653846, 0.        , 0.17741935,
        0.84158087, 0.06666667])]
 
 estim_algorithm = atc-model, mode = classification, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: [0.2420343062822348]
+test err: [0.24283019368406336]
 estimated acc: [array([1.33333911e-01, 2.22222294e-01, 2.10045698e-01, 1.00000000e+00,
-       1.48148464e-01, 4.77666365e-01, 4.99997500e-06])]
+       1.48148464e-01, 4.72095153e-01, 4.99997500e-06])]
 real acc: [array([0.15189873, 0.31155779, 0.33653846, 0.        , 0.17741935,
        0.84158087, 0.06666667])]
 
@@ -205,6 +205,48 @@ estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confide
 test err: [0.31883694938488166]
 estimated acc: [array([5.26316039e-01, 4.26229555e-01, 9.70874225e-02, 1.00000000e+00,
        3.99999840e-07, 5.82342956e-01, 4.99997500e-06])]
+real acc: [array([0.15189873, 0.31155779, 0.33653846, 0.        , 0.17741935,
+       0.84158087, 0.06666667])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confidence_scores = energy-conf, class_specific = False
+test err: [0.22212738452470956]
+estimated acc: [array([1.33333911e-01, 2.38532180e-01, 2.65486758e-01, 1.00000000e+00,
+       2.14285995e-01, 5.52859621e-01, 4.99997500e-06])]
+real acc: [array([0.15189873, 0.31155779, 0.33653846, 0.        , 0.17741935,
+       0.84158087, 0.06666667])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confidence_scores = energy-conf, class_specific = True
+test err: [0.36028657111910684]
+estimated acc: [array([3.52941557e-01, 4.88189017e-01, 4.97512911e-02, 1.00000000e+00,
+       3.99999840e-07, 2.28116715e-01, 4.99997500e-06])]
+real acc: [array([0.15189873, 0.31155779, 0.33653846, 0.        , 0.17741935,
+       0.84158087, 0.06666667])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confidence_scores = entropy-conf, class_specific = False
+test err: [0.1823127330128255]
+estimated acc: [array([1.33333911e-01, 2.70270336e-01, 3.24786354e-01, 1.00000000e+00,
+       1.48148464e-01, 7.32928681e-01, 4.99997500e-06])]
+real acc: [array([0.15189873, 0.31155779, 0.33653846, 0.        , 0.17741935,
+       0.84158087, 0.06666667])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confidence_scores = entropy-conf, class_specific = True
+test err: [0.3364346455815245]
+estimated acc: [array([6.00000200e-01, 4.26229555e-01, 6.89655631e-02, 1.00000000e+00,
+       3.99999840e-07, 5.60965103e-01, 4.99997500e-06])]
+real acc: [array([0.15189873, 0.31155779, 0.33653846, 0.        , 0.17741935,
+       0.84158087, 0.06666667])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confidence_scores = doctor-conf, class_specific = False
+test err: [0.21808672562818923]
+estimated acc: [array([1.33333911e-01, 2.22222294e-01, 2.57777811e-01, 1.00000000e+00,
+       7.69234320e-02, 6.68792349e-01, 4.99997500e-06])]
+real acc: [array([0.15189873, 0.31155779, 0.33653846, 0.        , 0.17741935,
+       0.84158087, 0.06666667])]
+
+estim_algorithm = ts-atc-model, mode = classification, metric = f1score, confidence_scores = doctor-conf, class_specific = True
+test err: [0.3137872162304525]
+estimated acc: [array([4.44444753e-01, 3.44827643e-01, 5.94059872e-02, 1.00000000e+00,
+       3.99999840e-07, 4.92099325e-01, 4.99997500e-06])]
 real acc: [array([0.15189873, 0.31155779, 0.33653846, 0.        , 0.17741935,
        0.84158087, 0.06666667])]
 
