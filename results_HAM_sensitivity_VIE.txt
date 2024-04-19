@@ -35,15 +35,15 @@ estimated acc: [array([1.        , 1.        , 1.        , 1.        , 1.       
 real acc: [array([0.5, 0.5, 0.5, 0.5, 0. , 1. , 0.5])]
 
 estim_algorithm = ts-model, mode = classification, metric = sensitivity, confidence_scores = energy-conf, class_specific = False
-test err: [0.5845462194041797]
+test err: [0.5845462159308994]
 estimated acc: [array([1.        , 1.        , 1.        , 1.        , 1.        ,
-       0.40817646, 1.        ])]
+       0.40817649, 1.        ])]
 real acc: [array([0.5, 0.5, 0.5, 0.5, 0. , 1. , 0.5])]
 
 estim_algorithm = ts-model, mode = classification, metric = sensitivity, confidence_scores = energy-conf, class_specific = True
-test err: [0.5056227241114255]
-estimated acc: [array([1.        , 1.        , 1.        , 1.        , 1.        ,
-       0.96064093, 1.        ])]
+test err: [0.5676745146888791]
+estimated acc: [array([1.       , 1.       , 1.       , 1.       , 1.       , 0.5262784,
+       1.       ])]
 real acc: [array([0.5, 0.5, 0.5, 0.5, 0. , 1. , 0.5])]
 
 estim_algorithm = ts-model, mode = classification, metric = sensitivity, confidence_scores = entropy-conf, class_specific = False
@@ -183,9 +183,9 @@ estimated acc: [array([1.        , 1.        , 1.        , 1.        , 1.       
 real acc: [array([0.5, 0.5, 0.5, 0.5, 0. , 1. , 0.5])]
 
 estim_algorithm = ts-atc-model, mode = classification, metric = sensitivity, confidence_scores = energy-conf, class_specific = True
-test err: [0.5012737605301076]
+test err: [0.5000979815792391]
 estimated acc: [array([1.        , 1.        , 1.        , 1.        , 1.        ,
-       0.99108368, 1.        ])]
+       0.99931413, 1.        ])]
 real acc: [array([0.5, 0.5, 0.5, 0.5, 0. , 1. , 0.5])]
 
 estim_algorithm = ts-atc-model, mode = classification, metric = sensitivity, confidence_scores = entropy-conf, class_specific = False
