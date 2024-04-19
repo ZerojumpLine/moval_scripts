@@ -5,7 +5,7 @@
 import os
 
 bin = '/well/win-fmrib-analysis/users/gqu790/conda/skylake/envs/moval/bin/python'
-cmd_estim = bin + ' /well/win-fmrib-analysis/users/gqu790/moval/moval_scripts/estim_seg3d.py --dataset {dataset} --predpath {predpath} --metric {metric} --gtpath {gtpath} \n'
+cmd_estim = bin + ' /well/win-fmrib-analysis/users/gqu790/moval/moval_scripts/estim_seg3d.py --dataset {dataset} --predpath {predpath} --metric {metric} --gtpath {gtpath} --partion {partion} \n'
 cmd_eval = bin + ' /well/win-fmrib-analysis/users/gqu790/moval/moval_scripts/eval_seg3d_brainlesion.py --dataset {dataset} --predpath {predpath} --gtpath {gtpath} --metric {metric} --savingpath {savingpath} \n'
 
 ## baseline training
@@ -44,7 +44,9 @@ with open('./brainlesion_estim_dsc.txt', 'w') as fpr:
 
         predpath = f"{training_cond}/atlasval/results"
         gtpath = f"{datapath}/Siemens Trio"
-        fpr.write(cmd_estim.format(dataset=dataset, predpath=f'"{predpath}"', metric=metric, gtpath=f'"{gtpath}"'))
+
+        for partion in range(1, 37):
+            fpr.write(cmd_estim.format(dataset=dataset, predpath=f'"{predpath}"', metric=metric, gtpath=f'"{gtpath}"', partion = partion))
 
 print(f'fsl_sub -q long -R 128 -l logs -t ./brainlesion_estim_dsc.txt')
 
@@ -58,7 +60,9 @@ with open('./brainlesion_estim_4metrics.txt', 'w') as fpr:
 
         predpath = f"{training_cond}/atlasval/results"
         gtpath = f"{datapath}/Siemens Trio"
-        fpr.write(cmd_estim.format(dataset=dataset, predpath=f'"{predpath}"', metric=metric, gtpath=f'"{gtpath}"'))
+
+        for partion in range(1, 37):
+            fpr.write(cmd_estim.format(dataset=dataset, predpath=f'"{predpath}"', metric=metric, gtpath=f'"{gtpath}"', partion = partion))
 
 print(f'fsl_sub -q long -R 128 -l logs -t ./brainlesion_estim_4metrics.txt')
 

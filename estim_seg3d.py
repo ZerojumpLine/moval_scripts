@@ -21,6 +21,7 @@ parser.add_argument('--dataset', default='', type=str, help='saving checkpoint n
 parser.add_argument('--predpath', default='/well/win-fmrib-analysis/users/gqu790/moval/Robust-Medical-Segmentation/output/prostate/prostateval/results', type=str, help='pred path of the validation cases')
 parser.add_argument('--metric', default='accuracy', type=str, help='type of estimation metrics, accuracy | sensitivity | precision | f1score | auc')
 parser.add_argument('--gtpath', default='/well/win-fmrib-analysis/users/gqu790/moval/Robust-Medical-Segmentation/data/Dataset_Prostate/BMC', type=str, help='gt path of the validation cases')
+parser.add_argument('--partion', default=0, type=int, help='run in batches')
 
 args = parser.parse_args()
 
@@ -69,7 +70,12 @@ def main():
         if moval_option[0] == 'ac-model' and moval_option[-1] == True:
             moval_options.remove(moval_option)
 
-    for k_cond in range(len(moval_options)):
+    if args.partion == 0:
+        k_conds = range(len(moval_options))
+    else:
+        k_conds = range(args.partion-1, args.partion)
+
+    for k_cond in k_conds:
         
         mode = moval_options[k_cond][1]
         confidence_scores = moval_options[k_cond][2]
