@@ -29,13 +29,13 @@ estimated metric: [0.99960855 0.80423934]
 real metric: [0.         0.80234989]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: 0.44765485275315553
-estimated metric: [0.13915028 0.04619046]
+test err: 0.5988250558538686
+estimated metric: [1. 1.]
 real metric: [0.         0.80234989]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: 0.07029329307542724
-estimated metric: [0.13909485 0.80384163]
+test err: 0.4425074950127467
+estimated metric: [0.88352522 0.80383966]
 real metric: [0.         0.80234989]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False
@@ -49,7 +49,7 @@ estimated metric: [0.99968896 0.80357354]
 real metric: [0.         0.80234989]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = doctor-conf, class_specific = False
-test err: 0.5820671119474821
+test err: 0.5820671119438638
 estimated metric: [0.99966534 0.96681877]
 real metric: [0.         0.80234989]
 
@@ -149,13 +149,13 @@ estimated metric: [1.15793749e-12 8.03528942e-01]
 real metric: [0.         0.80234989]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: 0.5966656469376803
-estimated metric: [0.9999771  0.99570408]
+test err: 0.5988250558538686
+estimated metric: [1. 1.]
 real metric: [0.         0.80234989]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: 0.0005894899182100496
-estimated metric: [1.15793749e-12 8.03528868e-01]
+test err: 0.00034649524359579983
+estimated metric: [1.15793749e-12 8.03042879e-01]
 real metric: [0.         0.80234989]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False

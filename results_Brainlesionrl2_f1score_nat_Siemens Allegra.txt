@@ -29,13 +29,13 @@ estimated metric: [0.99970591 0.77907276]
 real metric: [0.         0.33355805]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: 0.22527718567161142
-estimated metric: [0.15385106 0.03685473]
+test err: 0.8332209767991346
+estimated metric: [1. 1.]
 real metric: [0.         0.33355805]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: 0.3091293706516286
-estimated metric: [0.1537823  0.79803449]
+test err: 0.6648427396321304
+estimated metric: [0.86518462 0.79805891]
 real metric: [0.         0.33355805]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False
@@ -49,13 +49,13 @@ estimated metric: [0.99970464 0.70002951]
 real metric: [0.         0.33355805]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = doctor-conf, class_specific = False
-test err: 0.7745780109779768
+test err: 0.7745780105879
 estimated metric: [0.99970548 0.88300859]
 real metric: [0.         0.33355805]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = doctor-conf, class_specific = True
-test err: 0.6850860321455765
-estimated metric: [0.99970548 0.70402463]
+test err: 0.6850860347805474
+estimated metric: [0.99970548 0.70402464]
 real metric: [0.         0.33355805]
 
 estim_algorithm = doc-model, mode = segmentation, metric = f1score, confidence_scores = max_class_probability-conf, class_specific = False
@@ -114,8 +114,8 @@ estimated metric: [0.99999982 0.99991754]
 real metric: [0.         0.33355805]
 
 estim_algorithm = atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: 0.6746948323046827
-estimated metric: [0.99999982 0.68294789]
+test err: 0.6746954775898457
+estimated metric: [0.99999982 0.68294918]
 real metric: [0.         0.33355805]
 
 estim_algorithm = atc-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False
@@ -149,13 +149,13 @@ estimated metric: [1.15497135e-12 6.82342765e-01]
 real metric: [0.         0.33355805]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: 0.8222684543729252
-estimated metric: [0.99996608 0.97812888]
+test err: 0.8332209767991346
+estimated metric: [1. 1.]
 real metric: [0.         0.33355805]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: 0.1778533577520006
-estimated metric: [1.15497135e-12 6.89264762e-01]
+test err: 0.17838117881573815
+estimated metric: [1.15497135e-12 6.90320404e-01]
 real metric: [0.         0.33355805]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False

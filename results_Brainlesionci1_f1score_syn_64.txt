@@ -29,13 +29,13 @@ estimated metric: [0.99962918 0.80383758]
 real metric: [0.         0.80383706]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: 0.44888235587949216
-estimated metric: [0.13987922 0.04595157]
+test err: 0.5980814693640621
+estimated metric: [1. 1.]
 real metric: [0.         0.80383706]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: 0.06991230938981798
-estimated metric: [0.13982386 0.80383782]
+test err: 0.44176369926928566
+estimated metric: [0.88352664 0.80383782]
 real metric: [0.         0.80383706]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False
@@ -49,7 +49,7 @@ estimated metric: [0.99970386 0.80383681]
 real metric: [0.         0.80383706]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = doctor-conf, class_specific = False
-test err: 0.5814237356257748
+test err: 0.5814237356221834
 estimated metric: [0.99968269 0.96700185]
 real metric: [0.         0.80383706]
 
@@ -149,13 +149,13 @@ estimated metric: [1.15798380e-12 8.03838112e-01]
 real metric: [0.         0.80383706]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: 0.5959553106235596
-estimated metric: [0.99997906 0.99576862]
+test err: 0.5980814693640621
+estimated metric: [1. 1.]
 real metric: [0.         0.80383706]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: 3.7011622256948353e-07
-estimated metric: [1.15798380e-12 8.03836321e-01]
+test err: 1.9719139339841487e-06
+estimated metric: [1.15798380e-12 8.03833117e-01]
 real metric: [0.         0.80383706]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False

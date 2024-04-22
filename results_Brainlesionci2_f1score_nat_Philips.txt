@@ -29,13 +29,13 @@ estimated metric: [0.99961093 0.79927078]
 real metric: [0.         0.37958324]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: 0.276532561673068
-estimated metric: [0.40913669 0.23565481]
+test err: 0.8102083814591597
+estimated metric: [1. 1.]
 real metric: [0.         0.37958324]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: 0.42746343869961484
-estimated metric: [0.40860432 0.8259058 ]
+test err: 0.6682702209480664
+estimated metric: [0.88906474 0.82705894]
 real metric: [0.         0.37958324]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False
@@ -49,7 +49,7 @@ estimated metric: [0.99971757 0.70870134]
 real metric: [0.         0.37958324]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = doctor-conf, class_specific = False
-test err: 0.7592983519875245
+test err: 0.759298351979466
 estimated metric: [0.99969427 0.89848568]
 real metric: [0.         0.37958324]
 
@@ -149,13 +149,13 @@ estimated metric: [1.15509958e-12 6.40745205e-01]
 real metric: [0.         0.37958324]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: 0.8101093115779976
-estimated metric: [0.99999986 0.999802  ]
+test err: 0.8102083814591597
+estimated metric: [1. 1.]
 real metric: [0.         0.37958324]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: 0.12720665156174227
-estimated metric: [1.15509958e-12 6.33996540e-01]
+test err: 0.1264074795687954
+estimated metric: [1.15509958e-12 6.32398196e-01]
 real metric: [0.         0.37958324]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False

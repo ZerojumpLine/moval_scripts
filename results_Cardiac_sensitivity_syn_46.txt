@@ -29,13 +29,13 @@ estimated metric: [0.99322874 0.90241866 0.80152874 0.79156227]
 real metric: [0.         0.92963359 0.82164255 0.83696027]
 
 estim_algorithm = ts-model, mode = segmentation, metric = sensitivity, confidence_scores = energy-conf, class_specific = False
-test err: 0.5503383291289068
-estimated metric: [0.20114464 0.17088621 0.14724175 0.26989977]
+test err: 0.3529408976428196
+estimated metric: [1. 1. 1. 1.]
 real metric: [0.         0.92963359 0.82164255 0.83696027]
 
 estim_algorithm = ts-model, mode = segmentation, metric = sensitivity, confidence_scores = energy-conf, class_specific = True
-test err: 0.24248300541359877
-estimated metric: [1.91748287e-10 5.71428593e-01 2.50000507e-01 7.96875288e-01]
+test err: 0.22476087476125856
+estimated metric: [0.82222376 0.9022112  0.80953129 0.79967418]
 real metric: [0.         0.92963359 0.82164255 0.83696027]
 
 estim_algorithm = ts-model, mode = segmentation, metric = sensitivity, confidence_scores = entropy-conf, class_specific = False
@@ -49,13 +49,13 @@ estimated metric: [0.99401949 0.90330777 0.800547   0.79056616]
 real metric: [0.         0.92963359 0.82164255 0.83696027]
 
 estim_algorithm = ts-model, mode = segmentation, metric = sensitivity, confidence_scores = doctor-conf, class_specific = False
-test err: 0.28565925116563107
-estimated metric: [0.99354125 0.93794338 0.88894822 0.91044056]
+test err: 0.2830282956028073
+estimated metric: [0.9936479  0.93582962 0.88435852 0.90651355]
 real metric: [0.         0.92963359 0.82164255 0.83696027]
 
 estim_algorithm = ts-model, mode = segmentation, metric = sensitivity, confidence_scores = doctor-conf, class_specific = True
-test err: 0.2726338557301772
-estimated metric: [0.99435841 0.90294663 0.80063128 0.78848149]
+test err: 0.27236833033871755
+estimated metric: [0.99397906 0.9029788  0.80053499 0.78922836]
 real metric: [0.         0.92963359 0.82164255 0.83696027]
 
 estim_algorithm = doc-model, mode = segmentation, metric = sensitivity, confidence_scores = max_class_probability-conf, class_specific = False
@@ -149,13 +149,13 @@ estimated metric: [1.91748287e-10 9.00683290e-01 7.99805455e-01 8.03395595e-01]
 real metric: [0.         0.92963359 0.82164255 0.83696027]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = sensitivity, confidence_scores = energy-conf, class_specific = False
-test err: 0.3528466391705121
-estimated metric: [0.99999879 0.99991711 0.9998792  0.99982787]
+test err: 0.3529408976428196
+estimated metric: [1. 1. 1. 1.]
 real metric: [0.         0.92963359 0.82164255 0.83696027]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = sensitivity, confidence_scores = energy-conf, class_specific = True
-test err: 0.6046483606935579
-estimated metric: [1.91748287e-10 1.19047777e-02 5.95240534e-03 1.51785784e-01]
+test err: 0.022558952441258218
+estimated metric: [1.91748287e-10 9.32013678e-01 8.05123082e-01 7.65624014e-01]
 real metric: [0.         0.92963359 0.82164255 0.83696027]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = sensitivity, confidence_scores = entropy-conf, class_specific = False
@@ -169,12 +169,12 @@ estimated metric: [3.89458080e-07 9.00651186e-01 8.00041152e-01 8.03314853e-01]
 real metric: [0.         0.92963359 0.82164255 0.83696027]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = sensitivity, confidence_scores = doctor-conf, class_specific = False
-test err: 0.273350181981815
-estimated metric: [0.99576077 0.89306062 0.77691336 0.82062247]
+test err: 0.273268574125492
+estimated metric: [0.99575238 0.89330223 0.77718489 0.82042737]
 real metric: [0.         0.92963359 0.82164255 0.83696027]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = sensitivity, confidence_scores = doctor-conf, class_specific = True
-test err: 0.02168620047895886
-estimated metric: [1.91748287e-10 9.00813037e-01 7.99791133e-01 8.00887438e-01]
+test err: 0.02124870149390562
+estimated metric: [1.91748287e-10 9.00668816e-01 7.99913605e-01 8.02659183e-01]
 real metric: [0.         0.92963359 0.82164255 0.83696027]
 

@@ -29,13 +29,13 @@ estimated metric: [0.99962525 0.79594991]
 real metric: [0.         0.68557669]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: 0.40520714785902323
-estimated metric: [0.16838955 0.04355195]
+test err: 0.6572116536071947
+estimated metric: [1. 1.]
 real metric: [0.         0.68557669]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: 0.14329850346496492
-estimated metric: [0.16833685 0.80383685]
+test err: 0.501200307208158
+estimated metric: [0.8841407  0.80383661]
 real metric: [0.         0.68557669]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False
@@ -49,7 +49,7 @@ estimated metric: [0.99960863 0.74624924]
 real metric: [0.         0.68557669]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = doctor-conf, class_specific = False
-test err: 0.6168774620472459
+test err: 0.6168774620377189
 estimated metric: [0.9996067  0.91972492]
 real metric: [0.         0.68557669]
 
@@ -149,13 +149,13 @@ estimated metric: [1.15796003e-12 7.45444585e-01]
 real metric: [0.         0.68557669]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: 0.6502284869572954
-estimated metric: [0.99995804 0.98607562]
+test err: 0.6572116536071947
+estimated metric: [1. 1.]
 real metric: [0.         0.68557669]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: 0.032283264044349835
-estimated metric: [1.15796003e-12 7.50143221e-01]
+test err: 0.03330458473697717
+estimated metric: [1.15796003e-12 7.52185862e-01]
 real metric: [0.         0.68557669]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False

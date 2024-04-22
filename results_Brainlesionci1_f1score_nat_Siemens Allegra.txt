@@ -29,13 +29,13 @@ estimated metric: [0.99989016 0.78896336]
 real metric: [0.         0.26834846]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: 0.19435027952379444
-estimated metric: [0.1607709 0.0404188]
+test err: 0.8658257722244087
+estimated metric: [1. 1.]
 real metric: [0.         0.26834846]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: 0.34807152442176803
-estimated metric: [0.1607175 0.803774 ]
+test err: 0.709658957374713
+estimated metric: [0.88386693 0.80379944]
 real metric: [0.         0.26834846]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False
@@ -49,7 +49,7 @@ estimated metric: [0.99989927 0.72847056]
 real metric: [0.         0.26834846]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = doctor-conf, class_specific = False
-test err: 0.8275336647639808
+test err: 0.8275336647551128
 estimated metric: [0.99989571 0.92352007]
 real metric: [0.         0.26834846]
 
@@ -149,13 +149,13 @@ estimated metric: [1.15424246e-12 7.17974260e-01]
 real metric: [0.         0.26834846]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: 0.8591020667373377
-estimated metric: [0.9999877  0.98656489]
+test err: 0.8658257722244087
+estimated metric: [1. 1.]
 real metric: [0.         0.26834846]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: 0.19720743250882566
-estimated metric: [1.15424246e-12 6.62763321e-01]
+test err: 0.18926448176707855
+estimated metric: [1.15424246e-12 6.46877419e-01]
 real metric: [0.         0.26834846]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False

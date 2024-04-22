@@ -29,13 +29,13 @@ estimated metric: [0.99963282 0.80413822]
 real metric: [0.        0.8026786]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: 0.448187639634857
-estimated metric: [0.1397809  0.04608422]
+test err: 0.5986607021729589
+estimated metric: [1. 1.]
 real metric: [0.        0.8026786]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: 0.07044325485897157
-estimated metric: [0.13972553 0.80383958]
+test err: 0.4423419284157815
+estimated metric: [0.8835237  0.80383875]
 real metric: [0.        0.8026786]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False
@@ -49,7 +49,7 @@ estimated metric: [0.99970612 0.80468353]
 real metric: [0.        0.8026786]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = doctor-conf, class_specific = False
-test err: 0.5821020783486612
+test err: 0.582102078345092
 estimated metric: [0.99968544 0.96719731]
 real metric: [0.        0.8026786]
 
@@ -149,13 +149,13 @@ estimated metric: [1.15796757e-12 8.04810104e-01]
 real metric: [0.        0.8026786]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: 0.5966252659817008
-estimated metric: [0.99997912 0.99595001]
+test err: 0.5986607021729589
+estimated metric: [1. 1.]
 real metric: [0.        0.8026786]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: 0.0018402740566624855
-estimated metric: [1.15796757e-12 8.06359144e-01]
+test err: 0.001426345661523112
+estimated metric: [1.15796757e-12 8.05531287e-01]
 real metric: [0.        0.8026786]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False

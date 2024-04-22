@@ -29,13 +29,13 @@ estimated metric: [0.99886875 0.75053889]
 real metric: [0.         0.49165287]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: 0.3065120593363465
-estimated metric: [0.14763205 0.02626081]
+test err: 0.7541735641602183
+estimated metric: [1. 1.]
 real metric: [0.         0.49165287]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: 0.22980757499747675
-estimated metric: [0.14757743 0.80369059]
+test err: 0.5979141851533512
+estimated metric: [0.88372012 0.80376112]
 real metric: [0.         0.49165287]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False
@@ -49,7 +49,7 @@ estimated metric: [0.9983229  0.52759646]
 real metric: [0.         0.49165287]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = doctor-conf, class_specific = False
-test err: 0.6504932027913455
+test err: 0.6504932027641195
 estimated metric: [0.99842279 0.79421649]
 real metric: [0.         0.49165287]
 
@@ -149,13 +149,13 @@ estimated metric: [1.16093540e-12 4.32753386e-01]
 real metric: [0.         0.49165287]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: 0.7344234550892634
-estimated metric: [0.9997346  0.96076518]
+test err: 0.7541735641602183
+estimated metric: [1. 1.]
 real metric: [0.         0.49165287]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: 0.02463450484992634
-estimated metric: [1.16093540e-12 4.42383862e-01]
+test err: 0.02222930833260002
+estimated metric: [1.16093540e-12 4.47194255e-01]
 real metric: [0.         0.49165287]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False

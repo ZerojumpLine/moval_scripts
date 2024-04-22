@@ -29,13 +29,13 @@ estimated metric: [0.99889441 0.76355077]
 real metric: [0.        0.5498539]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: 0.33363086987304574
-estimated metric: [0.14851765 0.03110982]
+test err: 0.7250730492296362
+estimated metric: [1. 1.]
 real metric: [0.        0.5498539]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: 0.20116918733028402
-estimated metric: [0.14846311 0.80372916]
+test err: 0.5688317601691575
+estimated metric: [0.88373614 0.80378128]
 real metric: [0.        0.5498539]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False
@@ -49,7 +49,7 @@ estimated metric: [0.99842632 0.59186266]
 real metric: [0.        0.5498539]
 
 estim_algorithm = ts-model, mode = segmentation, metric = f1score, confidence_scores = doctor-conf, class_specific = False
-test err: 0.6423161253822721
+test err: 0.6423161253609437
 estimated metric: [0.9985157  0.83597046]
 real metric: [0.        0.5498539]
 
@@ -149,13 +149,13 @@ estimated metric: [1.16101561e-12 5.19536646e-01]
 real metric: [0.        0.5498539]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = False
-test err: 0.7095976183970999
-estimated metric: [0.99976565 0.96928349]
+test err: 0.7250730492296362
+estimated metric: [1. 1.]
 real metric: [0.        0.5498539]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = energy-conf, class_specific = True
-test err: 0.01274202018738077
-estimated metric: [1.16101561e-12 5.24369861e-01]
+test err: 0.011654007580249176
+estimated metric: [1.16101561e-12 5.26545886e-01]
 real metric: [0.        0.5498539]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = f1score, confidence_scores = entropy-conf, class_specific = False

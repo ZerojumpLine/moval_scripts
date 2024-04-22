@@ -29,13 +29,13 @@ estimated metric: [0.99934171 0.77655653]
 real metric: [0.         0.51043576]
 
 estim_algorithm = ts-model, mode = segmentation, metric = sensitivity, confidence_scores = energy-conf, class_specific = False
-test err: 0.21930505500100433
-estimated metric: [0.033481   0.10530665]
+test err: 0.744782121743808
+estimated metric: [1. 1.]
 real metric: [0.         0.51043576]
 
 estim_algorithm = ts-model, mode = segmentation, metric = sensitivity, confidence_scores = energy-conf, class_specific = True
-test err: 0.16952745702997418
-estimated metric: [0.03338006 0.81611061]
+test err: 0.5750612860414412
+estimated metric: [0.8444343  0.81612403]
 real metric: [0.         0.51043576]
 
 estim_algorithm = ts-model, mode = segmentation, metric = sensitivity, confidence_scores = entropy-conf, class_specific = False
@@ -49,12 +49,12 @@ estimated metric: [0.99948345 0.71766056]
 real metric: [0.         0.51043576]
 
 estim_algorithm = ts-model, mode = segmentation, metric = sensitivity, confidence_scores = doctor-conf, class_specific = False
-test err: 0.6671253691968724
+test err: 0.6671253690436365
 estimated metric: [0.99944456 0.84524194]
 real metric: [0.         0.51043576]
 
 estim_algorithm = ts-model, mode = segmentation, metric = sensitivity, confidence_scores = doctor-conf, class_specific = True
-test err: 0.6051859231208092
+test err: 0.6051859228232905
 estimated metric: [0.99944456 0.72136305]
 real metric: [0.         0.51043576]
 
@@ -149,13 +149,13 @@ estimated metric: [1.15597701e-12 7.10213507e-01]
 real metric: [0.         0.51043576]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = sensitivity, confidence_scores = energy-conf, class_specific = False
-test err: 0.7240046460676957
-estimated metric: [0.9999056  0.95853945]
+test err: 0.744782121743808
+estimated metric: [1. 1.]
 real metric: [0.         0.51043576]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = sensitivity, confidence_scores = energy-conf, class_specific = True
-test err: 0.07186633910817508
-estimated metric: [1.15597701e-12 6.54168435e-01]
+test err: 0.07490548153283832
+estimated metric: [1.15597701e-12 6.60246720e-01]
 real metric: [0.         0.51043576]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = sensitivity, confidence_scores = entropy-conf, class_specific = False

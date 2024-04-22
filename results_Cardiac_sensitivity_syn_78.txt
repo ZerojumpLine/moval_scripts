@@ -29,13 +29,13 @@ estimated metric: [0.99332929 0.90452662 0.80561695 0.79517212]
 real metric: [0.         0.92602938 0.82326524 0.83373811]
 
 estim_algorithm = ts-model, mode = segmentation, metric = sensitivity, confidence_scores = energy-conf, class_specific = False
-test err: 0.548224880983485
-estimated metric: [0.20097936 0.17222298 0.14942572 0.26946387]
+test err: 0.3542418165119777
+estimated metric: [1. 1. 1. 1.]
 real metric: [0.         0.92602938 0.82326524 0.83373811]
 
 estim_algorithm = ts-model, mode = segmentation, metric = sensitivity, confidence_scores = energy-conf, class_specific = True
-test err: 0.2533397389936271
-estimated metric: [1.92050315e-10 5.00001274e-01 2.50000109e-01 8.19672395e-01]
+test err: 0.22355162124520567
+estimated metric: [0.82220648 0.90226459 0.80967726 0.79909088]
 real metric: [0.         0.92602938 0.82326524 0.83373811]
 
 estim_algorithm = ts-model, mode = segmentation, metric = sensitivity, confidence_scores = entropy-conf, class_specific = False
@@ -49,13 +49,13 @@ estimated metric: [0.99414886 0.90569573 0.80532416 0.79553818]
 real metric: [0.         0.92602938 0.82326524 0.83373811]
 
 estim_algorithm = ts-model, mode = segmentation, metric = sensitivity, confidence_scores = doctor-conf, class_specific = False
-test err: 0.28880409417826275
-estimated metric: [0.99365256 0.93920353 0.89188043 0.91351259]
+test err: 0.28625616042357027
+estimated metric: [0.9937642  0.9371323  0.88742412 0.90973676]
 real metric: [0.         0.92602938 0.82326524 0.83373811]
 
 estim_algorithm = ts-model, mode = segmentation, metric = sensitivity, confidence_scores = doctor-conf, class_specific = True
-test err: 0.26848782331027854
-estimated metric: [0.99445574 0.90475377 0.80510134 0.79368208]
+test err: 0.2680917048892013
+estimated metric: [0.99408939 0.90483468 0.8051823  0.79473831]
 real metric: [0.         0.92602938 0.82326524 0.83373811]
 
 estim_algorithm = doc-model, mode = segmentation, metric = sensitivity, confidence_scores = max_class_probability-conf, class_specific = False
@@ -149,13 +149,13 @@ estimated metric: [1.91699145e-10 9.06342479e-01 8.06241490e-01 8.06071466e-01]
 real metric: [0.         0.92602938 0.82326524 0.83373811]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = sensitivity, confidence_scores = energy-conf, class_specific = False
-test err: 0.35419866129639677
-estimated metric: [0.99999989 0.99996329 0.99992176 0.99994244]
+test err: 0.3542418165119777
+estimated metric: [1. 1. 1. 1.]
 real metric: [0.         0.92602938 0.82326524 0.83373811]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = sensitivity, confidence_scores = energy-conf, class_specific = True
-test err: 0.604091485404519
-estimated metric: [1.91699145e-10 1.19048081e-02 5.95239701e-03 1.48809587e-01]
+test err: 0.017683040127401833
+estimated metric: [1.91699145e-10 9.29836197e-01 8.09478576e-01 7.80599441e-01]
 real metric: [0.         0.92602938 0.82326524 0.83373811]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = sensitivity, confidence_scores = entropy-conf, class_specific = False
@@ -169,12 +169,12 @@ estimated metric: [1.09123875e-05 9.06365292e-01 8.06353021e-01 8.06053314e-01]
 real metric: [0.         0.92602938 0.82326524 0.83373811]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = sensitivity, confidence_scores = doctor-conf, class_specific = False
-test err: 0.26802291676611667
-estimated metric: [0.99595855 0.89938779 0.7841854  0.82332643]
+test err: 0.26785283598829435
+estimated metric: [0.99595072 0.89970108 0.7845894  0.82328163]
 real metric: [0.         0.92602938 0.82326524 0.83373811]
 
 estim_algorithm = ts-atc-model, mode = segmentation, metric = sensitivity, confidence_scores = doctor-conf, class_specific = True
-test err: 0.016619446653364744
-estimated metric: [1.91699145e-10 9.06545825e-01 8.06511100e-01 8.03498022e-01]
+test err: 0.016278511800245875
+estimated metric: [1.91699145e-10 9.06327401e-01 8.06278355e-01 8.05312931e-01]
 real metric: [0.         0.92602938 0.82326524 0.83373811]
 
