@@ -41,9 +41,9 @@ estimated acc: [array([1.        , 1.        , 1.        , 1.        , 1.       
 real acc: [array([0.5, 0.5, 0.5, 0.5, 0. , 1. , 0.5])]
 
 estim_algorithm = ts-model, mode = classification, metric = sensitivity, confidence_scores = energy-conf, class_specific = True
-test err: [0.505860343264344]
-estimated acc: [array([1.       , 1.       , 1.       , 1.       , 1.       , 0.9589776,
-       1.       ])]
+test err: [0.5058236687317007]
+estimated acc: [array([1.        , 1.        , 1.        , 1.        , 1.        ,
+       0.95923432, 1.        ])]
 real acc: [array([0.5, 0.5, 0.5, 0.5, 0. , 1. , 0.5])]
 
 estim_algorithm = ts-model, mode = classification, metric = sensitivity, confidence_scores = entropy-conf, class_specific = False
@@ -65,9 +65,9 @@ estimated acc: [array([1.       , 1.       , 1.       , 1.       , 1.       , 0.
 real acc: [array([0.5, 0.5, 0.5, 0.5, 0. , 1. , 0.5])]
 
 estim_algorithm = ts-model, mode = classification, metric = sensitivity, confidence_scores = doctor-conf, class_specific = True
-test err: [0.5004485263474872]
+test err: [0.5002007258082325]
 estimated acc: [array([1.        , 1.        , 1.        , 1.        , 1.        ,
-       0.99686032, 1.        ])]
+       0.99859492, 1.        ])]
 real acc: [array([0.5, 0.5, 0.5, 0.5, 0. , 1. , 0.5])]
 
 estim_algorithm = doc-model, mode = classification, metric = sensitivity, confidence_scores = max_class_probability-conf, class_specific = False
@@ -183,9 +183,9 @@ estimated acc: [array([1.        , 1.        , 1.        , 1.        , 1.       
 real acc: [array([0.5, 0.5, 0.5, 0.5, 0. , 1. , 0.5])]
 
 estim_algorithm = ts-atc-model, mode = classification, metric = sensitivity, confidence_scores = energy-conf, class_specific = True
-test err: [0.5010777973716296]
+test err: [0.5010451368452166]
 estimated acc: [array([1.        , 1.        , 1.        , 1.        , 1.        ,
-       0.99245542, 1.        ])]
+       0.99268404, 1.        ])]
 real acc: [array([0.5, 0.5, 0.5, 0.5, 0. , 1. , 0.5])]
 
 estim_algorithm = ts-atc-model, mode = classification, metric = sensitivity, confidence_scores = entropy-conf, class_specific = False
