@@ -222,7 +222,7 @@ def main():
 
     mode = "segmentation"
     metric = args.metric
-    estim_algorithm = "moval-ensemble-seg-" + metric
+    estim_algorithm = "moval-ensemble-seg3d-" + metric
 
     results_files = args.savingpath
     # clean previous results
