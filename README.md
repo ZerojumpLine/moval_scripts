@@ -20,8 +20,8 @@ fsl_sub -q short -R 128 -l logs -t ./cifar10_eval.txt
 fsl_sub -q short -R 128 -l logs -t ./cifar100_eval.txt
 fsl_sub -q short -R 128 -l logs -t ./skinlesion_eval.txt
 
-fsl_sub -q long -R 128 -l logs -t ./brainlesion_eval_dsc.txt -R 64
-fsl_sub -q long -R 128 -l logs -t ./brainlesion_eval_4metrics.txt -R 64
+fsl_sub -q long -R 128 -l logs -t ./brainlesion_eval_dsc.txt
+fsl_sub -q long -R 128 -l logs -t ./brainlesion_eval_4metrics.txt
 fsl_sub -q short -R 128 -l logs -t ./cardiac_eval.txt
 fsl_sub -q short -R 128 -l logs -t ./prostate_eval.txt
 ```
@@ -46,8 +46,8 @@ fsl_sub -q short -R 128 -l logs -t ./cifar10_eval_ensemble.txt
 fsl_sub -q short -R 128 -l logs -t ./cifar100_eval_ensemble.txt
 fsl_sub -q short -R 128 -l logs -t ./skinlesion_eval_ensemble.txt
 
-fsl_sub -q long -R 128 -l logs -t ./brainlesion_eval_dsc_ensemble.txt -R 64
-fsl_sub -q long -R 128 -l logs -t ./brainlesion_eval_4metrics_ensemble.txt -R 64
+fsl_sub -q long -R 200 -l logs -t ./brainlesion_eval_dsc_ensemble.txt
+fsl_sub -q long -R 200 -l logs -t ./brainlesion_eval_4metrics_ensemble.txt
 fsl_sub -q short -R 128 -l logs -t ./cardiac_eval_ensemble.txt
 fsl_sub -q short -R 128 -l logs -t ./prostate_eval_ensemble.txt
 ```
