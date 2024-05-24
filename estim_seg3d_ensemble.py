@@ -61,7 +61,7 @@ def main():
 
     mode = "segmentation"
     metric = args.metric
-    estim_algorithm = "moval-ensemble-seg-" + metric
+    estim_algorithm = "moval-ensemble-seg3d-" + metric
 
     if metric == "auc":
         moval_model = moval.MOVAL(

@@ -70,7 +70,7 @@ def main():
 
     mode = "segmentation"
     metric = args.metric
-    estim_algorithm = "moval-ensemble-seg-" + metric
+    estim_algorithm = "moval-ensemble-seg2d-" + metric
 
     moval_model = moval.MOVAL(
         mode = mode,
