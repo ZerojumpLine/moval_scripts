@@ -60,12 +60,7 @@ def test_cls(estim_algorithm, mode, metric, logits_test, gt_test, dataset):
             gt_exist_test.append(np.sum(gt_case_test == k_cls) > 0)
         gt_guide_test.append(gt_exist_test)
 
-    if metric == "auc" and dataset == "Brainlesionlas":
-        # to accelrate the inference of auc, crop a bit.
-        logits_test_crop, _ = moval_model.crop(logits = logits_test, gt = gt_test, approximate_boundary = 30)
-        estim_metric_test = moval_model.estimate(logits_test_crop, gt_guide = gt_guide_test)
-    else:
-        estim_metric_test = moval_model.estimate(logits_test, gt_guide = gt_guide_test)
+    estim_metric_test = moval_model.estimate(logits_test, gt_guide = gt_guide_test)
 
     if metric == "accuracy":
         pred_all_flatten = []

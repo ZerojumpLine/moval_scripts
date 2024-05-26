@@ -63,20 +63,11 @@ def main():
     metric = args.metric
     estim_algorithm = "moval-ensemble-seg3d-" + metric
 
-    if metric == "auc":
-        moval_model = moval.MOVAL(
-            mode = mode,
-            metric = metric,
-            estim_algorithm = estim_algorithm,
-            approximate = True,
-            approximate_boundary = 30
-            )
-    else:
-        moval_model = moval.MOVAL(
-            mode = mode,
-            metric = metric,
-            estim_algorithm = estim_algorithm
-            )
+    moval_model = moval.MOVAL(
+        mode = mode,
+        metric = metric,
+        estim_algorithm = estim_algorithm
+        )
 
     
     #
