@@ -25,7 +25,7 @@ parser.add_argument('--savingpath', default='./results_CIFAR10_syn.txt', type=st
 
 args = parser.parse_args()
 
-def test_cls(estim_algorithm, mode, metric, logits_tests, gt_tests, dataset, portion):
+def test_cls(estim_algorithm, mode, metric, logits_tests, gt_tests, dataset, portion, seednum):
     """Test MOVAL with different conditions for classification tasks
 
     Args:
@@ -44,7 +44,7 @@ def test_cls(estim_algorithm, mode, metric, logits_tests, gt_tests, dataset, por
 
     """
 
-    ckpt_savname = f"./{dataset}_{mode}_{metric}_{estim_algorithm}_{portion}.pkl"
+    ckpt_savname = f"./{dataset}_{mode}_{metric}_{estim_algorithm}_{portion}_seed{seednum}.pkl"
 
     moval_model = moval.MOVAL.load(ckpt_savname)
 
@@ -155,36 +155,40 @@ def main():
     metric = args.metric
     estim_algorithm = "moval-ensemble-cls-" + metric
 
-    err_test, metric_estim, metric_real = test_cls(
-        estim_algorithm = estim_algorithm,
-        mode = mode,
-        metric = metric,
-        logits_tests = logits_tests,
-        gt_tests = gt_tests,
-        dataset = args.dataset,
-        portion = args.portion
-    )
+    seednums = [13, 35, 57, 79, 93]
+    for seednum in seednums:
 
-    test_condition = f"estim_algorithm = {estim_algorithm}, mode = {mode}, metric = {metric}"
+        err_test, metric_estim, metric_real = test_cls(
+            estim_algorithm = estim_algorithm,
+            mode = mode,
+            metric = metric,
+            logits_tests = logits_tests,
+            gt_tests = gt_tests,
+            dataset = args.dataset,
+            portion = args.portion,
+            seednum = seednum
+        )
 
-    results_files = args.savingpath
-    # clean previous results
-    if os.path.isfile(results_files):
-        os.remove(results_files)
+        test_condition = f"estim_algorithm = {estim_algorithm}, mode = {mode}, metric = {metric}"
 
-    with open(results_files, 'a') as f:
-        f.write(test_condition)
-        f.write('\n')
-        f.write("test err: ")
-        f.write(str(err_test))
-        f.write('\n')
-        f.write("estimated metric: ")
-        f.write(str(metric_estim))
-        f.write('\n')
-        f.write("real metric: ")
-        f.write(str(metric_real))
-        f.write('\n')
-        f.write('\n')
+        results_files = args.savingpath + "seed" + seednum
+        # clean previous results
+        if os.path.isfile(results_files):
+            os.remove(results_files)
+
+        with open(results_files, 'a') as f:
+            f.write(test_condition)
+            f.write('\n')
+            f.write("test err: ")
+            f.write(str(err_test))
+            f.write('\n')
+            f.write("estimated metric: ")
+            f.write(str(metric_estim))
+            f.write('\n')
+            f.write("real metric: ")
+            f.write(str(metric_real))
+            f.write('\n')
+            f.write('\n')
 
 if __name__ == "__main__":
     

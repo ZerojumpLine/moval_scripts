@@ -36,31 +36,34 @@ def main():
     # logits is of shape ``(n, d)``
     # gt is of shape ``(n, )``
 
-    num_data = int(len(gt_val) * args.portion / 100)
-    all_datalist = list(range(len(gt_val)))
-    random.seed(0)
-    random.shuffle(all_datalist)
-    sel_datalist = all_datalist[:num_data]
-    #
-    logits_val_sel = logits_val[sel_datalist, :]
-    gt_val_sel = gt_val[sel_datalist]
+    seednums = [13, 35, 57, 79, 93]
+    for seednum in seednums:
 
-    mode = "classification"
-    metric = args.metric
-    estim_algorithm = "moval-ensemble-cls-" + metric
+        num_data = int(len(gt_val) * args.portion / 100)
+        all_datalist = list(range(len(gt_val)))
+        random.seed(seednum)
+        random.shuffle(all_datalist)
+        sel_datalist = all_datalist[:num_data]
+        #
+        logits_val_sel = logits_val[sel_datalist, :]
+        gt_val_sel = gt_val[sel_datalist]
 
-    moval_model = moval.MOVAL(
-        mode = mode,
-        metric = metric,
-        estim_algorithm = estim_algorithm
-        )
+        mode = "classification"
+        metric = args.metric
+        estim_algorithm = "moval-ensemble-cls-" + metric
 
-    #
-    moval_model.fit(logits_val_sel, gt_val_sel, args.batch)
+        moval_model = moval.MOVAL(
+            mode = mode,
+            metric = metric,
+            estim_algorithm = estim_algorithm
+            )
 
-    ckpt_savname = f"./{args.dataset}_{mode}_{args.metric}_{estim_algorithm}_{args.portion}.pkl"
+        #
+        moval_model.fit(logits_val_sel, gt_val_sel, args.batch)
 
-    moval_model.save(ckpt_savname)
+        ckpt_savname = f"./{args.dataset}_{mode}_{args.metric}_{estim_algorithm}_{args.portion}_seed{seednum}.pkl"
+
+        moval_model.save(ckpt_savname)
 
 
 
