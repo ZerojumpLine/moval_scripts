@@ -171,7 +171,7 @@ def main():
 
         test_condition = f"estim_algorithm = {estim_algorithm}, mode = {mode}, metric = {metric}"
 
-        results_files = args.savingpath + "seed" + seednum
+        results_files = args.savingpath[:-4] + "seed" + seednum + ".txt"
         # clean previous results
         if os.path.isfile(results_files):
             os.remove(results_files)
