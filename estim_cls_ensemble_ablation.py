@@ -37,7 +37,7 @@ def main():
     # gt is of shape ``(n, )``
 
     num_data = int(len(gt_val) * args.portion / 100)
-    all_datalist = range(list(len(gt_val)))
+    all_datalist = list(range(len(gt_val)))
     random.seed(0)
     random.shuffle(all_datalist)
     sel_datalist = all_datalist[:num_data]
