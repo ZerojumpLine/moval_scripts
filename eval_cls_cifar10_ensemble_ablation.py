@@ -158,6 +158,11 @@ def main():
     seednums = [13, 35, 57, 79, 93]
     for seednum in seednums:
 
+        results_files = args.savingpath[:-4] + "seed" + str(seednum) + ".txt"
+        # clean previous results
+        if os.path.isfile(results_files):
+            os.remove(results_files)
+
         err_test, metric_estim, metric_real = test_cls(
             estim_algorithm = estim_algorithm,
             mode = mode,
@@ -170,11 +175,6 @@ def main():
         )
 
         test_condition = f"estim_algorithm = {estim_algorithm}, mode = {mode}, metric = {metric}"
-
-        results_files = args.savingpath[:-4] + "seed" + str(seednum) + ".txt"
-        # clean previous results
-        if os.path.isfile(results_files):
-            os.remove(results_files)
 
         with open(results_files, 'a') as f:
             f.write(test_condition)
