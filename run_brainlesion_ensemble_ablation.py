@@ -22,7 +22,7 @@ resultspath_r2 = '/well/win-fmrib-analysis/users/gqu790/moval/Robust-Medical-Seg
 '''Running inference
 
 '''
-training_conds = [resultspath, resultspath_c1, resultspath_c2, resultspath_r1, resultspath_r2]
+training_conds = [resultspath]
 ## test on synthesized and natural conditions
 
 test_syn_conds = list(range(1, 84))
