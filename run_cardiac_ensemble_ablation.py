@@ -48,14 +48,14 @@ with open('./cardiac_eval_ensemble_ablation.txt', 'w') as fpr:
 
                     predpath = f"{training_cond}/cardiactestsyn_{test_syn_cond}/results"
                     gtpath = f"{datapath}/1"
-                    savingpath = f"./results_{dataset}_{metric}_syn_{test_syn_cond}_ensemble.txt"
+                    savingpath = f"./results_{dataset}_{metric}_syn_{test_syn_cond}_ensemble_{portion}.txt"
                     fpr.write(cmd_eval.format(dataset=dataset, predpath=f'"{predpath}"', gtpath=f'"{gtpath}"', metric=metric, savingpath=f'"{savingpath}"', portion=portion))
                 
                 for test_nat_cond in test_nat_conds:
 
                     predpath = f"{training_cond}/cardiactest_{test_nat_cond}/results"
                     gtpath = f"{datapath}/{test_nat_cond}"
-                    savingpath = f"./results_{dataset}_{metric}_nat_{test_nat_cond}_ensemble.txt"
+                    savingpath = f"./results_{dataset}_{metric}_nat_{test_nat_cond}_ensemble_{portion}.txt"
                     fpr.write(cmd_eval.format(dataset=dataset, predpath=f'"{predpath}"', gtpath=f'"{gtpath}"', metric=metric, savingpath=f'"{savingpath}"', portion=portion))
 
 print(f'fsl_sub -q long -R 128 -l logs -t ./cardiac_eval_ensemble_ablation.txt')
