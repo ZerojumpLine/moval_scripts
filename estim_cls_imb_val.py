@@ -41,6 +41,7 @@ def main():
     n_classes = 10
     decay_factor = np.log(max_samples / min_samples) / (n_classes - 1)
     samples = [int(max_samples * np.exp(-decay_factor * i)) for i in range(n_classes)]
+    samples = samples[::-1]
     #
     logits_val_ = []
     gt_val_ = []
