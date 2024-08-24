@@ -152,7 +152,7 @@ def main():
         # [700, ..., 70]
         np.random.seed(0)
         max_samples = 700
-        min_samples = 7
+        min_samples = 700
         n_classes = 10
         decay_factor = np.log(max_samples / min_samples) / (n_classes - 1)
         samples = [int(max_samples * np.exp(-decay_factor * i)) for i in range(n_classes)]
@@ -163,7 +163,7 @@ def main():
         #
         logits_val_ = []
         gt_val_ = []
-        for n_cls in range(9, 10):
+        for n_cls in range(5, 10):
             logits_val_cls = logits_val[gt_val == n_cls]
             gt_val_cls = gt_val[gt_val == n_cls]
             #
