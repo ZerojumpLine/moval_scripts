@@ -157,14 +157,13 @@ def main():
         decay_factor = np.log(max_samples / min_samples) / (n_classes - 1)
         samples = [int(max_samples * np.exp(-decay_factor * i)) for i in range(n_classes)]
         samples = samples[::-1]
-        samples = [0, 0, 0, 0, 0, 0, 0, 0, 700]
         #
         logits_val = logits_test[testc_indx, :]
         gt_val = gt_test[testc_indx]
         #
         logits_val_ = []
         gt_val_ = []
-        for n_cls in range(10):
+        for n_cls in range(9, 10):
             logits_val_cls = logits_val[gt_val == n_cls]
             gt_val_cls = gt_val[gt_val == n_cls]
             #
