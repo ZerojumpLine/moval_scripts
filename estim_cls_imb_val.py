@@ -57,6 +57,8 @@ def main():
     
     logits_val = np.concatenate(logits_val_)
     gt_val = np.concatenate(gt_val_)
+    print(logits_val.shape)
+    print(gt_val.shape)
 
     moval_options = list(itertools.product(moval.models.get_estim_options(),
                                ["classification"],
