@@ -50,15 +50,13 @@ def main():
         #
         selected_indices = np.random.choice(len(gt_val_cls), size=samples[n_cls], replace=False)
         logits_val_sel = logits_val_cls[selected_indices]
-        gt_val_sel = gt_val[selected_indices]
+        gt_val_sel = gt_val_cls[selected_indices]
         #
         logits_val_.append(logits_val_sel)
         gt_val_.append(gt_val_sel)
     
     logits_val = np.concatenate(logits_val_)
     gt_val = np.concatenate(gt_val_)
-    print(logits_val.shape)
-    print(gt_val.shape)
 
     moval_options = list(itertools.product(moval.models.get_estim_options(),
                                ["classification"],
