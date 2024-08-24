@@ -152,7 +152,7 @@ def main():
         # [700, ..., 70]
         np.random.seed(0)
         max_samples = 700
-        min_samples = 70
+        min_samples = 700
         n_classes = 10
         decay_factor = np.log(max_samples / min_samples) / (n_classes - 1)
         samples = [int(max_samples * np.exp(-decay_factor * i)) for i in range(n_classes)]
