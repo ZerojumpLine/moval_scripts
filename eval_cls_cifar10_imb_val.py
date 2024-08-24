@@ -135,7 +135,6 @@ def main():
     gt_test = np.argmax(targets_all_test, axis = 1)
 
     #
-
     testc_indx_1 = list(range(0, 7000))
     testc_indx_2 = list(range(7000, 14000))
     testc_indx_3 = list(range(14000, 21000))
@@ -149,9 +148,36 @@ def main():
     gt_tests = []
     #
     for testc_indx in testc_indxs:
+        # resample it to be long-tailed..
+        # [700, ..., 70]
+        np.random.seed(0)
+        max_samples = 700
+        min_samples = 70
+        n_classes = 10
+        decay_factor = np.log(max_samples / min_samples) / (n_classes - 1)
+        samples = [int(max_samples * np.exp(-decay_factor * i)) for i in range(n_classes)]
         #
-        logits_tests.append(logits_test[testc_indx, :])
-        gt_tests.append(gt_test[testc_indx])
+        logits_val = logits_test[testc_indx, :]
+        gt_val = gt_test[testc_indx]
+        #
+        logits_val_ = []
+        gt_val_ = []
+        for n_cls in range(10):
+            logits_val_cls = logits_val[gt_val == n_cls]
+            gt_val_cls = gt_val[gt_val == n_cls]
+            #
+            selected_indices = np.random.choice(len(gt_val_cls), size=np.min((samples[n_cls], len(gt_val_cls))), replace=False)
+            logits_val_sel = logits_val_cls[selected_indices]
+            gt_val_sel = gt_val_cls[selected_indices]
+            #
+            logits_val_.append(logits_val_sel)
+            gt_val_.append(gt_val_sel)
+        
+        logits_val = np.concatenate(logits_val_)
+        gt_val = np.concatenate(gt_val_)
+
+        logits_tests.append(logits_val)
+        gt_tests.append(gt_val)
 
     #
 
