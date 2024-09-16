@@ -162,7 +162,7 @@ def main():
             logits_val_cls = logits_val[gt_val == n_cls]
             gt_val_cls = gt_val[gt_val == n_cls]
             #
-            selected_indices = np.random.choice(len(gt_val_cls), size=np.min((samples[9-n_cls], len(gt_val_cls))), replace=False)
+            selected_indices = np.random.choice(len(gt_val_cls), size=np.min((samples[n_cls], len(gt_val_cls))), replace=False)
             logits_val_sel = logits_val_cls[selected_indices]
             gt_val_sel = gt_val_cls[selected_indices]
             #
