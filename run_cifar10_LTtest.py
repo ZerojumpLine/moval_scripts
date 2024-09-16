@@ -44,7 +44,7 @@ with open('./cifar10_eval_LTtest.txt', 'w+') as fpr:
             for test_syn_cond in test_syn_conds:
 
                 testpath = f"{training_cond}/predictions_val_{test_syn_cond}.csv"
-                savingpath = f"./results_{dataset}_{metric}_{test_syn_cond}.txt"
+                savingpath = f"./results_{dataset}_{metric}_{test_syn_cond}_imb_test.txt"
                 fpr.write(cmd_eval.format(dataset=dataset, testpath=f'"{testpath}"', metric=metric, savingpath=f'"{savingpath}"'))
 
 print(f'fsl_sub -q long -R 128 -l logs -t ./cifar10_eval_LTtest.txt')
