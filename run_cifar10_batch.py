@@ -29,7 +29,7 @@ training_conds = [resultspath, resultspath_c1, resultspath_c2, resultspath_r1, r
 test_syn_conds = ['gaussian_blur', 'motion_blur', 'snow', 'contrast', 'jpeg_compression', 'shot_noise', 'saturate',
                   'impulse_noise', 'pixelate', 'speckle_noise', 'frost', 'defocus_blur', 'brightness',
                   'gaussian_noise', 'zoom_blur', 'fog', 'spatter', 'glass_blur', 'elastic_transform']
-metrics = ["accuracy", "sensitivity", "precision", "f1score", "auc"]
+metrics = ["accuracy"]
 numcls = 10
 
 # estimate 36 conditions
