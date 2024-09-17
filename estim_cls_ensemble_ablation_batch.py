@@ -61,7 +61,7 @@ def main():
         #
         moval_model.fit(logits_val_sel, gt_val_sel, args.batch)
 
-        ckpt_savname = f"./{args.dataset}_{mode}_{args.metric}_{estim_algorithm}_{args.portion}_seed{seednum}.pkl"
+        ckpt_savname = f"./{args.dataset}_{mode}_{args.metric}_{estim_algorithm}_{args.portion}_seed{seednum}_batch.pkl"
 
         moval_model.save(ckpt_savname)
 
