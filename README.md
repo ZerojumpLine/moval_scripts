@@ -1,53 +1,166 @@
-## To run the all the experiments on BMRC, with command line.
+# MOVAL Scripts
 
-### Most experiments
+This repository contains scripts and results using MOVAL (Model Validation) framework.
 
-First, estimate the parameters with:
+## Project Structure
+
 ```
-fsl_sub -q short -R 128 -l logs -t ./cifar10_estim.txt
-fsl_sub -q short -R 128 -l logs -t ./cifar100_estim.txt
-fsl_sub -q short -R 128 -l logs -t ./skinlesion_estim.txt
-
-fsl_sub -q short -R 128 -l logs -t ./brainlesion_estim_dsc.txt
-fsl_sub -q short -R 128 -l logs -t ./brainlesion_estim_4metrics.txt
-fsl_sub -q short -R 128 -l logs -t ./cardiac_estim.txt
-fsl_sub -q short -R 128 -l logs -t ./prostate_estim.txt
-```
-
-Then, run the evaluation:
-```
-fsl_sub -q short -R 128 -l logs -t ./cifar10_eval.txt
-fsl_sub -q short -R 128 -l logs -t ./cifar100_eval.txt
-fsl_sub -q short -R 128 -l logs -t ./skinlesion_eval.txt
-
-fsl_sub -q long -R 128 -l logs -t ./brainlesion_eval_dsc.txt
-fsl_sub -q long -R 128 -l logs -t ./brainlesion_eval_4metrics.txt
-fsl_sub -q short -R 128 -l logs -t ./cardiac_eval.txt
-fsl_sub -q short -R 128 -l logs -t ./prostate_eval.txt
-```
-
-### Ensemble experiments
-
-First, estimate the parameters with:
-```
-fsl_sub -q short -R 128 -l logs -t ./cifar10_estim_ensemble.txt
-fsl_sub -q short -R 128 -l logs -t ./cifar100_estim_ensemble.txt
-fsl_sub -q short -R 128 -l logs -t ./skinlesion_estim_ensemble.txt
-
-fsl_sub -q short -R 128 -l logs -t ./brainlesion_estim_dsc_ensemble.txt
-fsl_sub -q short -R 128 -l logs -t ./brainlesion_estim_4metrics_ensemble.txt
-fsl_sub -q short -R 128 -l logs -t ./cardiac_estim_ensemble.txt
-fsl_sub -q short -R 128 -l logs -t ./prostate_estim_ensemble.txt
+moval_scripts/
+├── README.md                 # This file
+├── scripts/                  # Main execution scripts
+│   ├── run_brainlesion.py   # Brain lesion segmentation experiments
+│   ├── run_cardiac.py       # Cardiac segmentation experiments
+│   ├── run_cifar.py         # CIFAR classification experiments
+│   ├── run_prostate.py      # Prostate segmentation experiments
+│   └── run_skinlesion.py    # Skin lesion classification experiments
+├── src/                      # Source code modules
+│   ├── estimation/          # Estimation algorithms
+│   │   ├── Classification/  # Classification estimation methods
+│   │   └── Segmentation/    # Segmentation estimation methods
+│   ├── evaluation/          # Evaluation metrics and analysis
+│   │   ├── Classification/  # Classification evaluation
+│   │   └── Segmentation/    # Segmentation evaluation
+│   └── utils/               # Utility functions and helpers
+├── results/                  # Experimental results organized by dataset
+│   ├── brainlesion/         # Brain lesion segmentation results
+│   ├── cardiac/             # Cardiac segmentation results
+│   ├── cifar/               # CIFAR classification results
+│   ├── prostate/            # Prostate segmentation results
+│   └── skinlesion/          # Skin lesion classification results
+├── data/                     # Data files and models
+│   ├── models/              # Trained model files (.pkl)
+│   └── *.csv                # CSV data files
+├── notebooks/                # Jupyter notebooks for analysis
+├── documentation/            # PDF reports and documentation
+└── logs/                     # Log files from experiments
 ```
 
-Then, run the evaluation:
-```
-fsl_sub -q short -R 128 -l logs -t ./cifar10_eval_ensemble.txt
-fsl_sub -q short -R 128 -l logs -t ./cifar100_eval_ensemble.txt
-fsl_sub -q short -R 128 -l logs -t ./skinlesion_eval_ensemble.txt
+## Datasets
 
-fsl_sub -q short -R 200 -l logs -t ./brainlesion_eval_dsc_ensemble.txt
-fsl_sub -q short -R 200 -l logs -t ./brainlesion_eval_4metrics_ensemble.txt
-fsl_sub -q short -R 128 -l logs -t ./cardiac_eval_ensemble.txt
-fsl_sub -q short -R 128 -l logs -t ./prostate_eval_ensemble.txt
+### 1. Brain Lesion Segmentation
+- **Task**: Medical image segmentation
+- **Metrics**: DSC, F1-score, Accuracy, Precision
+- **Experiments**: Ensemble methods, different confidence measures
+- **Files**: `brainlesion_*.txt` in `results/brainlesion/`
+
+### 2. Cardiac Segmentation
+- **Task**: Cardiac MRI segmentation
+- **Metrics**: Accuracy, DSC
+- **Experiments**: Natural and synthetic data variations
+- **Files**: `cardiac_*.txt` in `results/cardiac/`
+
+### 3. CIFAR Classification
+- **Task**: Image classification
+- **Metrics**: Accuracy
+- **Experiments**: Brightness variations, ensemble methods
+- **Files**: `cifar*.txt` in `results/cifar/`
+
+### 4. Prostate Segmentation
+- **Task**: Prostate MRI segmentation
+- **Metrics**: DSC, F1-score
+- **Experiments**: Different confidence measures
+- **Files**: `prostate_*.txt` in `results/prostate/`
+
+### 5. Skin Lesion Classification
+- **Task**: Skin lesion classification (HAM dataset)
+- **Metrics**: Accuracy
+- **Experiments**: Brightness and contrast variations
+- **Files**: `HAM_*.txt` in `results/skinlesion/`
+
+## API Documentation
+
+### Estimation Module (`src/estimation/`)
+
+#### Classification Estimation
+- **`estim_cls.py`**: Basic classification estimation
+- **`estim_cls_batch.py`**: Batch processing for classification
+- **`estim_cls_ensemble.py`**: Ensemble methods for classification
+- **`estim_cls_ensemble_batch.py`**: Batch ensemble classification
+- **`estim_cls_ensemble_ablation.py`**: Ablation studies for ensemble classification
+- **`estim_cls_ensemble_ablation_batch.py`**: Batch ablation studies
+- **`estim_cls_imb_val.py`**: Imbalanced validation for classification
+
+#### Segmentation Estimation
+- **`estim_seg2d.py`**: 2D segmentation estimation
+- **`estim_seg2d_ensemble.py`**: Ensemble 2D segmentation
+- **`estim_seg2d_ensemble_ablation.py`**: Ablation studies for 2D segmentation
+- **`estim_seg3d.py`**: 3D segmentation estimation
+- **`estim_seg3d_ensemble.py`**: Ensemble 3D segmentation
+- **`estim_seg3d_ensemble_ablation.py`**: Ablation studies for 3D segmentation
+
+### Evaluation Module (`src/evaluation/`)
+
+#### Classification Evaluation
+- **`eval_cls_cifar10.py`**: CIFAR-10 classification evaluation
+- **`eval_cls_cifar10_batch.py`**: Batch CIFAR-10 evaluation
+- **`eval_cls_cifar10_ensemble.py`**: Ensemble CIFAR-10 evaluation
+- **`eval_cls_cifar10_ensemble_batch.py`**: Batch ensemble CIFAR-10 evaluation
+- **`eval_cls_cifar10_ensemble_ablation.py`**: Ablation studies for CIFAR-10
+- **`eval_cls_cifar10_ensemble_ablation_batch.py`**: Batch ablation studies
+- **`eval_cls_cifar10_imb_val.py`**: Imbalanced validation evaluation
+- **`eval_cls_cifar100.py`**: CIFAR-100 classification evaluation
+- **`eval_cls_cifar100_ensemble.py`**: Ensemble CIFAR-100 evaluation
+- **`eval_cls_skinlesion.py`**: Skin lesion classification evaluation
+- **`eval_cls_skinlesion_ensemble.py`**: Ensemble skin lesion evaluation
+
+#### Segmentation Evaluation
+- **`eval_seg2d_cardiac.py`**: 2D cardiac segmentation evaluation
+- **`eval_seg2d_cardiac_ensemble.py`**: Ensemble 2D cardiac evaluation
+- **`eval_seg2d_cardiac_ensemble_ablation.py`**: Ablation studies for 2D cardiac
+- **`eval_seg3d_brainlesion.py`**: 3D brain lesion segmentation evaluation
+- **`eval_seg3d_brainlesion_ensemble.py`**: Ensemble 3D brain lesion evaluation
+- **`eval_seg3d_brainlesion_ensemble_ablation.py`**: Ablation studies for 3D brain lesion
+- **`eval_seg3d_prostate.py`**: 3D prostate segmentation evaluation
+- **`eval_seg3d_prostate_ensemble.py`**: Ensemble 3D prostate evaluation
+
+### Utility Module (`src/utils/`)
+- Common helper functions and utilities
+- Data processing functions
+- Visualization utilities
+
+## Usage
+
+### 1. Run Experiments
+Use the scripts in `scripts/` directory:
+```bash
+# Brain lesion segmentation
+python scripts/run_brainlesion.py
+
+# Cardiac segmentation
+python scripts/run_cardiac.py
+
+# CIFAR classification
+python scripts/run_cifar10.py
+
+# Prostate segmentation
+python scripts/run_prostate.py
+
+# Skin lesion classification
+python scripts/run_skinlesion.py
 ```
+
+### 2. Run Specific Estimations
+```bash
+# Classification estimation
+python src/estimation/estim_cls.py
+
+# Segmentation estimation
+python src/estimation/estim_seg2d.py
+
+# Ensemble methods
+python src/estimation/estim_cls_ensemble.py
+```
+
+### 3. Evaluate Results
+```bash
+# Classification evaluation
+python src/evaluation/eval_cls_cifar10.py
+
+# Segmentation evaluation
+python src/evaluation/eval_seg2d_cardiac.py
+```
+
+### 4. Analyze Results
+- Check organized results in `results/` directory
+- Access trained models in `data/models/`
+- Use Jupyter notebooks in `notebooks/` for analysis
