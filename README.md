@@ -6,14 +6,15 @@ This repository contains scripts and results using MOVAL (Model Validation) fram
 
 ```
 moval_scripts/
-├── README.md                 # This file
-├── scripts/                  # Main execution scripts
-│   ├── run_brainlesion.py   # Brain lesion segmentation experiments
-│   ├── run_cardiac.py       # Cardiac segmentation experiments
-│   ├── run_cifar.py         # CIFAR classification experiments
-│   ├── run_prostate.py      # Prostate segmentation experiments
-│   └── run_skinlesion.py    # Skin lesion classification experiments
-├── src/                      # Source code modules
+├── README.md                # This file
+├── scripts/                 # Main execution scripts
+│   ├── brainlesion/         # Brain lesion segmentation experiments
+│   ├── cardiac/             # Cardiac segmentation experiments
+│   ├── cifar10/             # CIFAR10 classification experiments
+│   ├── cifar100/            # CIFAR100 classification experiments
+│   ├── prostate/            # Prostate segmentation experiments
+│   └── skinlesion/          # Skin lesion classification experiments
+├── src/                     # Source code modules
 │   ├── estimation/          # Estimation algorithms
 │   │   ├── Classification/  # Classification estimation methods
 │   │   └── Segmentation/    # Segmentation estimation methods
@@ -21,49 +22,44 @@ moval_scripts/
 │   │   ├── Classification/  # Classification evaluation
 │   │   └── Segmentation/    # Segmentation evaluation
 │   └── utils/               # Utility functions and helpers
-├── results/                  # Experimental results organized by dataset
+├── results/                 # Experimental results organized by dataset
 │   ├── brainlesion/         # Brain lesion segmentation results
 │   ├── cardiac/             # Cardiac segmentation results
 │   ├── cifar/               # CIFAR classification results
 │   ├── prostate/            # Prostate segmentation results
 │   └── skinlesion/          # Skin lesion classification results
-├── data/                     # Data files and models
-│   ├── models/              # Trained model files (.pkl)
+├── models/                  # Trained model files (.pkl)
+├── data/                    # Data files and models
 │   └── *.csv                # CSV data files
-├── notebooks/                # Jupyter notebooks for analysis
-├── documentation/            # PDF reports and documentation
-└── logs/                     # Log files from experiments
+├── notebooks/               # Jupyter notebooks for analysis
+├── figures/           # PDF reports and documentation
+└── logs/                    # Log files from experiments
 ```
 
 ## Datasets
 
 ### 1. Brain Lesion Segmentation
 - **Task**: Medical image segmentation
-- **Metrics**: DSC, F1-score, Accuracy, Precision
 - **Experiments**: Ensemble methods, different confidence measures
 - **Files**: `brainlesion_*.txt` in `results/brainlesion/`
 
 ### 2. Cardiac Segmentation
 - **Task**: Cardiac MRI segmentation
-- **Metrics**: Accuracy, DSC
 - **Experiments**: Natural and synthetic data variations
 - **Files**: `cardiac_*.txt` in `results/cardiac/`
 
 ### 3. CIFAR Classification
 - **Task**: Image classification
-- **Metrics**: Accuracy
 - **Experiments**: Brightness variations, ensemble methods
 - **Files**: `cifar*.txt` in `results/cifar/`
 
 ### 4. Prostate Segmentation
 - **Task**: Prostate MRI segmentation
-- **Metrics**: DSC, F1-score
 - **Experiments**: Different confidence measures
 - **Files**: `prostate_*.txt` in `results/prostate/`
 
 ### 5. Skin Lesion Classification
 - **Task**: Skin lesion classification (HAM dataset)
-- **Metrics**: Accuracy
 - **Experiments**: Brightness and contrast variations
 - **Files**: `HAM_*.txt` in `results/skinlesion/`
 
@@ -123,20 +119,8 @@ moval_scripts/
 ### 1. Run Experiments
 Use the scripts in `scripts/` directory:
 ```bash
-# Brain lesion segmentation
-python scripts/run_brainlesion.py
-
-# Cardiac segmentation
-python scripts/run_cardiac.py
-
 # CIFAR classification
-python scripts/run_cifar10.py
-
-# Prostate segmentation
-python scripts/run_prostate.py
-
-# Skin lesion classification
-python scripts/run_skinlesion.py
+python scripts/cifar10/run_cifar10.py
 ```
 
 ### 2. Run Specific Estimations
